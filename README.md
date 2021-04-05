@@ -8,6 +8,8 @@
   - [Interactive Maps](#interactive-maps)
     - [Interactive Choropleth Map: Vacancy Rate per EupMeonDong 2019](#vacancy-rate-per-eupmeondong-2019)
     - [Interactive Choropleth Map: Local Extinction Rate per EupMeonDong 2019](#local-extinction-rate-per-eupmeondong-2019)
+    - [Cartogram](#cartogram)
+    - [3D Map](#3d-map)
 - [Technologies](#technologies)
 - [Status](#status)
 
