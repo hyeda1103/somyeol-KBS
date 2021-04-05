@@ -6,7 +6,8 @@
 - [Setup](#setup)
 - [Features](#features)
   - [Interactive Maps](#interactive-maps)
-    - [Interactive Choropleth Map: Vacancy Rate per EupMeonDong](#Interactive-Choropleth-Map:-Vacancy-Rate-per-EupMeonDong-2019)
+    - [Interactive Choropleth Map: Vacancy Rate per EupMeonDong 2019](#vacancy-rate-per-eupmeondong-2019)
+    - [Interactive Choropleth Map: Local Extinction Rate per EupMeonDong 2019](#local-extinction-rate-per-eupmeondong-2019)
 - [Technologies](#technologies)
 - [Status](#status)
 
@@ -25,19 +26,19 @@
 
 ### Interactive Maps
 
-#### Interactive Choropleth Map: Vacancy Rate per EupMeonDong 2019
+#### Vacancy Rate per EupMeonDong 2019
 
 ![빈집지도](https://i.ibb.co/wzjPbvd/empty-house.gif)
 
-- This map visualize the vacancy rate per EupMeonDong.
+- This map is an interactive choropleth map which visualize the vacancy rate per EupMeonDong.
 - This map is powered by `Leaflet`
 - EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
-#### Interactive Choropleth Map: Local Extinction Rate per EupMeonDong 2019
+#### Local Extinction Rate per EupMeonDong 2019
 
 ![소멸위험지도](https://i.ibb.co/S61FDnr/extinction.gif)
 
-- This map visualize the local extinction rate per EupMeonDong.
+- This map is an interactive choropleth map which visualize the local extinction rate per EupMeonDong.
 - This map is powered by `Leaflet`
 - EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
