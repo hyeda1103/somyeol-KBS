@@ -21,8 +21,13 @@
 
 ## Setup
 
-- Install dependencies with the following command: `yarn`
-- Open http://localhost:3000/ and see the app with the following command: `yarn start`
+To run this project, install it locally using yarn:
+
+```
+$ cd ../somyeol-KBS
+$ yarn
+$ yarn start
+```
 
 ## Main Features
 
