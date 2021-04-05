@@ -1,4 +1,4 @@
-# Somyeol-KBS: Interactive Web Documentary with Data Visulization
+# Somyeol-KBS: Interactive Web Doc with Data Visulization
 
 ## Table of contents
 
