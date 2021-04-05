@@ -29,6 +29,7 @@
 #### Vacancy Rate per EupMeonDong 2019
 
 <img src="https://i.ibb.co/wzjPbvd/empty-house.gif" alt="카토그램" width="500" />
+
 - This interactive choropleth map visualize the vacancy rate per EupMeonDong.
 - This map is made with `Leaflet`
 - Data can be found in [popData_optimized.json](.src/components/Chp1/data/popData_optimized.json)
