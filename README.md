@@ -32,7 +32,7 @@
 
 - This interactive choropleth map visualize the vacancy rate per EupMeonDong.
 - This map is made with `Leaflet`
-- Data can be found in [popData_optimized.json](.src/components/Chp1/data/popData_optimized.json)
+- Data can be found in [popData_optimized.json](./src/components/Chp1/data/popData_optimized.json)
 
 #### Local Extinction Rate per EupMeonDong 2019
 
@@ -40,7 +40,7 @@
 
 - This interactive choropleth map visualize the local extinction rate per EupMeonDong.
 - This map is made with `Leaflet`
-- Data can be found in [popData_optimized.json](.src/components/Chp1/data/popData_optimized.json)
+- Data can be found in [popData_optimized.json](./src/components/Chp1/data/popData_optimized.json)
 
 #### Cartogram
 
@@ -52,11 +52,13 @@
 - Data can be found in [korea_map3_optimized.geojson](./public/korea_map3_optimized.geojson),
   [new_offset.csv](./public/new_offset.csv)
 
-#### 3D map
+#### 3D MAP
 
-<img src="https://i.ibb.co/DtgBwVM/cartogram.gif" alt="카토그램" width="500" />
+<img src="https://i.ibb.co/PxQxnN0/kepler.gif" alt="3D 수도권 인구 이동 지도" width="500" />
 
-`Kepler`, `redux`
+- This 3D map visualize the out-migration of young population, from outside to inside Seoul capital area.
+- A private MAPBOX access token is required to import 3D map.
+- This map is made with `Kepler` and `redux`
 
 Download all the data or clone this repository by clicking the green "Clone or download" button above.
 
