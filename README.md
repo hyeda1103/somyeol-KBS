@@ -23,21 +23,21 @@
 
 ### Interactive Maps
 
-#### Choropleth Map: Empty House Rate by EupMeonDong, 2019
+#### Interactive Choropleth Map: Vacancy Rate per EupMeonDong, 2019
 
-![빈집율](https://i.ibb.co/yQ7ZM3N/empty-house.gif)
+![빈집율](https://i.ibb.co/wzjPbvd/empty-house.gif)
 
-- This map visualize the empty house rates in EupMeonDong level. `leaflet`
+- This map visualize the vacancy rate per EupMeonDong.
+- This map is powered by `Leaflet`
+- EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
-EupMyeonDong-Level Data
-읍면동-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
+#### Interactive Choropleth Map: Local Extinction Rate per EupMeonDong, 2019
 
-#### Choropleth Map: Extinction Rate by EupMeonDong, 2019
+![소멸위험지수](https://i.ibb.co/S61FDnr/extinction.gif)
 
-![소멸위험지수](https://i.ibb.co/XWdcfs8/extinction.gif)
-`leaflet`
-EupMyeonDong-Level Data
-읍면동-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
+- This map visualize the local extinction rate per EupMeonDong.
+- This map is powered by `Leaflet`
+- EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
 #### Cartogram
 
