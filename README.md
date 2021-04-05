@@ -12,7 +12,7 @@
 
 - Interactive Web with Data Visualization for [소멸의 땅](http://vod.kbs.co.kr/index.html?source=episode&sname=vod&stype=vod&program_code=T2011-1097&program_id=PS-2021000586-01-000&broadcast_complete_yn=N&local_station_code=00&section_code=05&section_sub_code=06#more) aired on KBS.
 
-- Visit website: [KBS 다큐 소멸의 땅](https://somyeol.kbs.co.kr/)
+- Visit website: [https://somyeol.kbs.co.kr/](https://somyeol.kbs.co.kr/)
 
 ## Setup
 
