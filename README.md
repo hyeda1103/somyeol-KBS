@@ -5,6 +5,8 @@
 - [General info](#general-info)
 - [Setup](#setup)
 - [Features](#features)
+  - [Interactive Maps](#interactive-maps)
+    - [Interactive Choropleth Map: Vacancy Rate per EupMeonDong](#Interactive-Choropleth-Map:-Vacancy-Rate-per-EupMeonDong,-2019)
 - [Technologies](#technologies)
 - [Status](#status)
 
@@ -25,7 +27,7 @@
 
 #### Interactive Choropleth Map: Vacancy Rate per EupMeonDong, 2019
 
-![빈집율](https://i.ibb.co/wzjPbvd/empty-house.gif)
+![빈집지도](https://i.ibb.co/wzjPbvd/empty-house.gif)
 
 - This map visualize the vacancy rate per EupMeonDong.
 - This map is powered by `Leaflet`
@@ -33,7 +35,7 @@
 
 #### Interactive Choropleth Map: Local Extinction Rate per EupMeonDong, 2019
 
-![소멸위험지수](https://i.ibb.co/S61FDnr/extinction.gif)
+![소멸위험지도](https://i.ibb.co/S61FDnr/extinction.gif)
 
 - This map visualize the local extinction rate per EupMeonDong.
 - This map is powered by `Leaflet`
