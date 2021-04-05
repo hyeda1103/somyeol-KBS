@@ -36,7 +36,7 @@
 
 #### Local Extinction Rate per EupMeonDong 2019
 
-![소멸위험지도](https://i.ibb.co/S61FDnr/extinction.gif =200x)
+![소멸위험지도](https://i.ibb.co/S61FDnr/extinction.gif =150x)
 
 - This interactive choropleth map visualize the local extinction rate per EupMeonDong.
 - This map is made with `Leaflet`
@@ -44,7 +44,7 @@
 
 #### Cartogram
 
-![카토그램](https://i.ibb.co/DtgBwVM/cartogram.gif)
+![카토그램](https://i.ibb.co/DtgBwVM/cartogram.gif =150x)
 
 - This cartogram visualize the change of population over time.
 - The geographic size is altered to be directly proportional to population.
