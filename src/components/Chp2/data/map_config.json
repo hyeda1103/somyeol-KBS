@@ -1,0 +1,360 @@
+{
+  "version": "v1",
+  "config": {
+    "visState": {
+      "filters": [],
+      "layers": [
+        {
+          "id": "8k3q94l",
+          "type": "point",
+          "config": {
+            "dataId": "dolabel",
+            "label": "시도 이름",
+            "color": [
+              130,
+              154,
+              227
+            ],
+            "columns": {
+              "lat": "lat",
+              "lng": "lon",
+              "altitude": null
+            },
+            "isVisible": true,
+            "visConfig": {
+              "radius": 10,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": false,
+              "thickness": 2,
+              "strokeColor": null,
+              "colorRange": {
+                "colors": [
+                  "#5A1846",
+                  "#900C3F",
+                  "#C70039",
+                  "#E3611C",
+                  "#F1920E",
+                  "#FFC300"
+                ]
+              },
+              "radiusRange": [
+                0,
+                50
+              ],
+              "filled": false
+            },
+            "hidden": false,
+            "textLabel": [
+              {
+                "field": {
+                  "name": "province",
+                  "type": "string"
+                },
+                "color": [
+                  240,
+                  237,
+                  234
+                ],
+                "size": 30,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "middle",
+                "alignment": "top"
+              }
+            ]
+          },
+          "visualChannels": {
+            "colorField": null,
+            "colorScale": "quantile",
+            "strokeColorField": null,
+            "strokeColorScale": "quantile",
+            "sizeField": null,
+            "sizeScale": "linear"
+          }
+        },
+        {
+          "id": "2wboe3j",
+          "type": "arc",
+          "config": {
+            "dataId": "local_to_seoul_young",
+            "label": "이동한 청년 인구",
+            "color": [
+              255,
+              235,
+              140
+            ],
+            "columns": {
+              "lat0": "outgoing_y",
+              "lng0": "outgoing_x",
+              "lat1": "ingoing_y",
+              "lng1": "ingoing_x"
+            },
+            "isVisible": true,
+            "visConfig": {
+              "opacity": 0.8,
+              "thickness": 2,
+              "colorRange": {
+                "colors": [
+                  "#56ebd3", 
+                  "#782d40", 
+                  "#9de866", 
+                  "#ce6552", 
+                  "#2b6955", 
+                  "#b4ddd4", 
+                  "#e02a61", 
+                  "#46f33e", 
+                  "#2f4285", 
+                  "#df72ef", 
+                  "#cdcc50", 
+                  "#9085e0", 
+                  "#728e24", 
+                  "#feb786"
+                  ]
+              },
+              "sizeRange": [
+                0,
+                0.5
+              ],
+              "targetColor": [
+                218,
+                0,
+                0
+              ]
+            },
+            "hidden": false,
+            "textLabel": [
+              {
+                "field": null,
+                "color": [
+                  255,
+                  255,
+                  255
+                ],
+                "size": 18,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "start",
+                "alignment": "center"
+              }
+            ]
+          },
+          "visualChannels": {
+            "colorField": {
+              "name": "outgoing_province",
+              "type": "string"
+            },
+            "colorScale": "ordinal",
+            "sizeField": {
+              "name": "count",
+              "type": "integer"
+            },
+            "sizeScale": "sqrt"
+          }
+        },
+        {
+          "id": "klfo00d",
+          "type": "grid",
+          "config": {
+            "dataId": "local_to_seoul_young",
+            "label": "해당 지역에 도착한 청년 인구 수",
+            "color": [
+              30,
+              150,
+              190
+            ],
+            "columns": {
+              "lat": "ingoing_y",
+              "lng": "ingoing_x",
+              "altitude": null
+            },
+            "isVisible": true,
+            "visConfig": {              
+              "radius": 5,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": false,
+              "thickness": 2,
+              "strokeColor": null,
+              "colorRange": {
+                "colors": [
+                  "#FFC300",
+                  "#F1920E",
+                  "#E3611C",
+                  "#C70039",
+                  "#900C3F",
+                  "#5A1846"
+                ]
+               },
+              "coverage": 1,
+              "sizeRange": [
+                0,
+                500
+              ],
+              "percentile": [
+                0,
+                100
+              ],
+              "elevationPercentile": [
+                0,
+                100
+              ],
+              "elevationScale": 5,
+              "colorAggregation": "count",
+              "sizeAggregation": "count",
+              "enable3d": false
+            },
+            "hidden": false,
+            "textLabel": [
+              {
+                "field": null,
+                "color": [
+                  255,
+                  255,
+                  255
+                ],
+                "size": 18,
+                "offset": [
+                  0,
+                  0
+                ],
+                "anchor": "start",
+                "alignment": "center"
+              }
+            ]
+          },
+          "visualChannels": {
+            "colorField": null,
+            "colorScale": "quantile",
+            "sizeField": null,
+            "sizeScale": "linear"
+          }
+        },
+        {
+          "id": "ua3ee67",
+          "type": "point",
+          "config": {
+            "dataId": "local_to_seoul_young",
+            "label": "해당 지역을 떠난 청년 인구 수",
+            "color": [
+              36,
+              115,
+              189
+            ],
+            "columns": {
+              "lat": "outgoing_y",
+              "lng": "outgoing_x",
+              "altitude": null
+            },
+            "isVisible": true,
+            "visConfig": {
+              "radius": 10,
+              "fixedRadius": false,
+              "opacity": 0.8,
+              "outline": false,
+              "thickness": 2,
+              "strokeColor": null,
+              "colorRange": {
+                "colors": [
+                  "#f1eef6",
+                  "#d0d1e6",
+                  "#a6bddb",
+                  "#74a9cf",
+                  "#2b8cbe",
+                  "#045a8d"
+                ]
+              },
+              "radiusRange": [
+                0,
+                15
+              ],
+              "filled": true
+            },
+            "hidden": false,
+            "textLabel": []
+          },
+          "visualChannels": {
+            "colorField": null,
+            "colorScale": "quantile",
+            "strokeColorField": null,
+            "strokeColorScale": "quantile",
+            "sizeField": {
+              "name": "count",
+              "type": "integer"
+            },
+            "sizeScale": "sqrt"
+          }
+        }
+      ],
+      "interactionConfig": {
+        "tooltip": {
+          "fieldsToShow": {
+            "dolabel": [
+              {
+                "name": "province",
+                "format": null
+              }
+            ],
+            "local_to_seoul_young": [
+              {
+                "name": "outgoing_province",
+                "format": null
+              }
+            ]
+          },
+          "compareMode": false,
+          "compareType": "absolute",
+          "enabled": false
+        },
+        "brush": {
+          "size": 0.5,
+          "enabled": false
+        },
+        "geocoder": {
+          "enabled": false
+        },
+        "coordinate": {
+          "enabled": false
+        }
+      },
+      "layerBlending": "additive",
+      "splitMaps": [],
+      "animationConfig": {
+        "currentTime": null,
+        "speed": 1
+      }
+    },
+    "mapState": {
+      "bearing": 51.771385929942184,
+      "dragRotate": true,
+      "latitude": 36.11550382665519,
+      "longitude": 126.98595049119281,
+      "pitch": 56.44505985540695,
+      "zoom": 6.777614533986783,
+      "isSplit": false
+    },
+    "mapStyle": {
+      "styleType": "dark",
+      "topLayerGroups": {},
+      "visibleLayerGroups": {
+        "label": false,
+        "road": false,
+        "border": false,
+        "building": false,
+        "water": true,
+        "land": false,
+        "3d building": false
+      },
+      "threeDBuildingColor": [
+        9.665468314072013,
+        17.18305478057247,
+        31.1442867897876
+      ],
+      "mapStyles": {}
+    }
+  }
+}

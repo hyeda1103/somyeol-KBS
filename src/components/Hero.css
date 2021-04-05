@@ -1,0 +1,29 @@
+.playButton {
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    fill: white;
+    stroke: rgba(255, 255, 255);
+    stroke-width: 2px;
+    transition: 500ms ease;
+}
+
+.playButton:hover {
+    fill: rgba(255, 138, 0);
+    stroke: rgba(255, 138, 0);
+    stroke-width: 4px;
+    transition: 500ms ease;
+    fill-opacity: 1;
+}
+
+@media only screen and (max-width: 425px) {
+    .playButton {
+        width: 80px;
+        height: 80px;
+        cursor: pointer;
+        fill: white;
+        stroke: rgba(255, 255, 255);
+        stroke-width: 2px;
+        transition: 500ms ease;
+    }
+}

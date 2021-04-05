@@ -1,0 +1,4 @@
+.leaflet-container {
+    /* 지도 배경 이미지로 빗금 배경 설정 */
+    background-image: url(../../../assets/images/Chp1/mapBg.svg)
+}
