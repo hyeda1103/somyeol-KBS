@@ -31,14 +31,14 @@
 <img src="https://i.ibb.co/wzjPbvd/empty-house.gif" alt="카토그램" width="500" />
 - This interactive choropleth map visualize the vacancy rate per EupMeonDong.
 - This map is made with `Leaflet`
-- EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
+- Data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
 #### Local Extinction Rate per EupMeonDong 2019
 
 <img src="https://i.ibb.co/S61FDnr/extinction.gif" alt="카토그램" width="500" />
 - This interactive choropleth map visualize the local extinction rate per EupMeonDong.
 - This map is made with `Leaflet`
-- EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
+- Data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
 #### Cartogram
 
@@ -47,7 +47,8 @@
 - This cartogram visualize the change of population over time.
 - The geographic size is altered to be directly proportional to population.
 - This map is made with `D3.js`
-- EupMyeonDong-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
+- Data can be found in [korea_map3_optimized.geojson](./components/Chp2/data/korea_map3_optimized.geojson),
+  [new_offset.csv](./components/Chp2/data/new_offset.csv)
 
 #### 3D map
 
