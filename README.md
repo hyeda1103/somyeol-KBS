@@ -25,16 +25,16 @@
 
 #### Choropleth Map: Empty House Rate by EupMeonDong, 2019
 
-![alt text]("https://i.ibb.co/yQ7ZM3N/empty-house.gif")
+![빈집율](https://i.ibb.co/yQ7ZM3N/empty-house.gif)
 
-- This map is colored in proportion to empty house rate by EupMeonDong level. `leaflet`
+- This map visualize the empty house rates in EupMeonDong level. `leaflet`
 
 EupMyeonDong-Level Data
 읍면동-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
 
 #### Choropleth Map: Extinction Rate by EupMeonDong, 2019
 
-![alt text]("https://i.ibb.co/XWdcfs8/extinction.gif")
+![소멸위험지수](https://i.ibb.co/XWdcfs8/extinction.gif)
 `leaflet`
 EupMyeonDong-Level Data
 읍면동-level data can be found in [popData_optimized.json](./components/Chp1/data/popData_optimized.json)
