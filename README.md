@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-- [General info](#general-info)
+- [General Info](#general-info)
 - [Setup](#setup)
 - [Main Features](#main-features)
   - [Interactive Maps](#interactive-maps)
