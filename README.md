@@ -51,8 +51,7 @@
 - This cartogram visualize the change of population over time.
 - The geographic size is altered to be directly proportional to population.
 - This map is made with `D3.js`
-- Data can be found in [korea_map3_optimized.geojson](./public/korea_map3_optimized.geojson),
-  [new_offset.csv](./public/new_offset.csv)
+- Data can be found in [korea_map3_optimized.geojson](./public/korea_map3_optimized.geojson) and [new_offset.csv](./public/new_offset.csv)
 
 #### 3D MAP
 
