@@ -15,7 +15,7 @@
 ## General Info
 
 - Interactive Web Documentary with Data Visualization
-- Based on [소멸의 땅](http://vod.kbs.co.kr/index.html?source=episode&sname=vod&stype=vod&program_code=T2011-1097&program_id=PS-2021000586-01-000&broadcast_complete_yn=N&local_station_code=00&section_code=05&section_sub_code=06#more) aired on KBS, 4th April, 2021
+- Based on [소멸의 땅](http://vod.kbs.co.kr/index.html?source=episode&sname=vod&stype=vod&program_code=T2011-1097&program_id=PS-2021000586-01-000&broadcast_complete_yn=N&local_station_code=00&section_code=05&section_sub_code=06#more) aired on KBS, April 4th, 2021
 
 - Visit website: [https://somyeol.kbs.co.kr/](https://somyeol.kbs.co.kr/)
 
