@@ -35,10 +35,10 @@ function App() {
         <Provider store={store}>
           <Switch>
             <Route exact path="/" component={Homepage} />
-            <Route path="/prologue" component={Prologue} />
-            <Route path="/chp1" component={Chapter1} />
-            <Route path="/chp2" component={Chapter2} />
-            <Route path="/chp3" component={Chapter3} />
+            <Route exact path="/prologue" component={Prologue} />
+            <Route exact path="/chp1" component={Chapter1} />
+            <Route exact path="/chp2" component={Chapter2} />
+            <Route exact path="/chp3" component={Chapter3} />
           </Switch>
         </Provider>
       </Suspense>
