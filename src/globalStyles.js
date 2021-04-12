@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components/macro';
+import { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -12,6 +12,6 @@ const GlobalStyle = createGlobalStyle`
         overflow-x: hidden;
         font-family: 'NanumSquare';
     }
-`
+`;
 
 export default GlobalStyle;

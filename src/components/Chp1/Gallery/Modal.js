@@ -4,7 +4,7 @@ import posed from "react-pose";
 
 function useOnClickOutside(ref, handler) {
   useEffect(() => {
-    const listener = event => {
+    const listener = (event) => {
       // Do nothing if clicking ref's element or descendent elements
       if (!ref.current || ref.current.contains(event.target)) {
         return;
@@ -13,8 +13,8 @@ function useOnClickOutside(ref, handler) {
       handler(event);
     };
 
-    document.addEventListener("mousedown", listener, {passive: true});
-    document.addEventListener("touchstart", listener, {passive: true});
+    document.addEventListener("mousedown", listener, { passive: true });
+    document.addEventListener("touchstart", listener, { passive: true });
 
     return () => {
       document.removeEventListener("mousedown", listener);
@@ -28,15 +28,15 @@ const modalBackgroundPoses = {
     background: "rgba(0, 0, 0, 0.8)",
     applyAtStart: {
       display: "block",
-      overflow: "hidden"
-    }
+      overflow: "hidden",
+    },
   },
   closed: {
     background: "rgba(0, 0, 0, 0)",
     applyAtEnd: {
       display: "none",
-    }
-  }
+    },
+  },
 };
 
 const ModalBackground = styled(posed.div(modalBackgroundPoses))`
@@ -45,8 +45,8 @@ const ModalBackground = styled(posed.div(modalBackgroundPoses))`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 999; 
-  overflow: 'hidden';
+  z-index: 999;
+  overflow: "hidden";
 `;
 
 const modalPoses = {
@@ -55,19 +55,19 @@ const modalPoses = {
     transition: {
       opacity: {
         type: "tween",
-        duration: 800
-      }
-    }
+        duration: 800,
+      },
+    },
   },
   closed: {
     opacity: 0,
     transition: {
       opacity: {
         type: "tween",
-        duration: 800
-      }
-    }
-  }
+        duration: 800,
+      },
+    },
+  },
 };
 
 const Window = styled(posed.div(modalPoses))`
@@ -94,7 +94,7 @@ const Window = styled(posed.div(modalPoses))`
   }
 `;
 
-const Modal = ({isOpen, toggle, children }) => {
+const Modal = ({ isOpen, toggle, children }) => {
   const ref = useRef();
 
   useOnClickOutside(ref, () => toggle(false));
@@ -104,6 +104,6 @@ const Modal = ({isOpen, toggle, children }) => {
       <Window ref={ref}>{children}</Window>
     </ModalBackground>
   );
-}
+};
 
-export default React.memo(Modal)
+export default React.memo(Modal);

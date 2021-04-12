@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import EupMeonDong from './EupMeonDong'
-import { LoadPopDataTask } from '../../tasks/LoadTask'
+import React, { useState, useEffect } from "react";
+import EupMeonDong from "./EupMeonDong";
+import { LoadPopDataTask } from "../../tasks/LoadTask";
 
 const ExtinctionMap = () => {
   const [districts, setDistricts] = useState([]);
@@ -10,11 +10,9 @@ const ExtinctionMap = () => {
     loadPopDataTask.load(setDistricts);
   };
 
-  useEffect(load, []); 
+  useEffect(load, []);
 
-  return (
-      <EupMeonDong districts={districts} />          
-  );
+  return <EupMeonDong districts={districts} />;
 };
 
-export default ExtinctionMap
+export default ExtinctionMap;

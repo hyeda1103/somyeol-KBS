@@ -1,62 +1,59 @@
-import React, { useRef, useEffect, useState } from 'react';
-import styled from "styled-components"
-import { useLocation } from 'react-router-dom';
+import React, { useRef, useEffect, useState } from "react";
+import styled from "styled-components";
+import { useLocation } from "react-router-dom";
 
 // 각 챕터별 배경음악 음원
-import wave1 from '../assets/audios/chp1ThemeSong.mp3'
-import wave2 from '../assets/audios/chp2ThemeSong.mp3'
-import wave3 from '../assets/audios/chp3ThemeSong.mp3'
-
+import wave1 from "../assets/audios/chp1ThemeSong.mp3";
+import wave2 from "../assets/audios/chp2ThemeSong.mp3";
+import wave3 from "../assets/audios/chp3ThemeSong.mp3";
 
 const BGMplayer = () => {
   const [playing, setPlaying] = useState(false);
   const [wave, setWave] = useState(null);
   let audio = useRef();
-  let location = useLocation()
-
+  let location = useLocation();
 
   useEffect(() => {
-  // 페이지별 배경음악 변경
-    if(location.pathname==='/chp1') {
-      setWave(wave1)
-    }else if(location.pathname==='/chp2'){
-      setWave(wave2)
-    }else if(location.pathname==='/chp3'){
-      setWave(wave3)
+    // 페이지별 배경음악 변경
+    if (location.pathname === "/chp1") {
+      setWave(wave1);
+    } else if (location.pathname === "/chp2") {
+      setWave(wave2);
+    } else if (location.pathname === "/chp3") {
+      setWave(wave3);
     }
 
-    audio.current = new Audio(wave)
+    audio.current = new Audio(wave);
 
     // 볼륨 설정
-    audio.current.volume = 0.1
+    audio.current.volume = 0.1;
     // 반복 재생
-    audio.current.loop = true
+    audio.current.loop = true;
 
     // 재생 버튼 누르면 play 일시정지 누르면 pause
-    playing ? audio.current.play() : audio.current.pause()
+    playing ? audio.current.play() : audio.current.pause();
 
     return () => {
-      audio.current.pause() // 컴포넌트 unmount시 오디오 정지
-    }
-  }, [playing, wave, location.pathname])
+      audio.current.pause(); // 컴포넌트 unmount시 오디오 정지
+    };
+  }, [playing, wave, location.pathname]);
 
-  const toggle = () => setPlaying(!playing); // 재생/일시정지 버튼 누를 때마다 재생상태 변동 
+  const toggle = () => setPlaying(!playing); // 재생/일시정지 버튼 누를 때마다 재생상태 변동
 
-    return (
-      <>
-        <Player>
-          <BGM>BGM</BGM>
-      
-          <PlayPause>
-            <input type="checkbox" value="None" id="playpause" name="check" />
-            <label onClick={toggle} htmlFor="playpause"></label>
-          </PlayPause>
-        </Player>
-      </>
-    )
-}
+  return (
+    <>
+      <Player>
+        <BGM>BGM</BGM>
+
+        <PlayPause>
+          <input type="checkbox" value="None" id="playpause" name="check" />
+          <label onClick={toggle} htmlFor="playpause"></label>
+        </PlayPause>
+      </Player>
+    </>
+  );
+};
 export default BGMplayer;
-
 
 const Player = styled.div`
   position: fixed;
@@ -75,21 +72,21 @@ const Player = styled.div`
   @media screen and (max-width: 768px) {
     margin-right: 120px;
   }
-  
+
   @media screen and (max-width: 600px) {
     display: none;
   }
-`
+`;
 
-const BGM = styled.div` 
-  font-size: 15px; 
-  line-height: 1.0;
-  margin-right: 58px; 
+const BGM = styled.div`
+  font-size: 15px;
+  line-height: 1;
+  margin-right: 58px;
   color: #fff;
   @media screen and (max-width: 425px) {
     display: none;
   }
-`
+`;
 
 const PlayPause = styled.div`
   margin-top: -15px;
@@ -121,4 +118,4 @@ const PlayPause = styled.div`
       border-width: 0px 0px 0px 12.5px;
     }
   }
-`
+`;
