@@ -3,21 +3,26 @@ import styled, { css } from "styled-components/macro";
 import { useLocation } from "react-router-dom";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
+import { useSelector, useDispatch } from "react-redux";
+import { handleMenu } from "./../../modules/menuReducer";
 
 // 컴포넌트
 import KaKaoShareButton from "./KaKao1";
 import MenuNav from "./MenuNav";
 import HorizontalIndicator from "./HorizontalIndicator";
 // 로고 이미지: KBS 창원 X 시사기획 창
-import CompanyLogo from "../assets/images/Logo/Logo.png";
+import CompanyLogo from "../../assets/images/Logo/Logo.png";
 
 const Navbar = () => {
   const [reduce, setReduce] = useState(true);
 
-  const [open, setOpen] = useState(false);
   const location = useLocation();
   const [path, setPath] = useState(null);
   const [navbar, setNavbar] = useState(false);
+
+  const { open } = useSelector((state) => ({ open: state.menu.open }));
+  const dispatch = useDispatch();
+  const onClickMenu = () => dispatch(handleMenu());
 
   let style = {
     backgroundColor: !open && !navbar ? "transparent" : "#000",
@@ -100,7 +105,7 @@ const Navbar = () => {
             url={"https://somyeol.kbs.co.kr"}
             quote={"소멸의 땅, 지방은 어떻게 사라지나"}
             hashtag="#지방소멸"
-            style={{ outline: "none" }}
+            style={{ outline: "none", margin: "0 28.3px" }}
           >
             <Facebook />
           </FacebookShareButton>
@@ -115,7 +120,7 @@ const Navbar = () => {
           </TwitterShareButton>
         </NavBtn>
         {/* 햄버거 메뉴 */}
-        <StyledBurger open={open} onClick={() => setOpen(!open)}>
+        <StyledBurger open={open} onClick={onClickMenu}>
           <div />
           <div />
           <div />
@@ -271,7 +276,6 @@ const SNSIcon = css`
 
 const Facebook = styled(FaFacebookF)`
   ${SNSIcon}
-  margin: 0 28.3px;
 `;
 
 const Twitter = styled(FaTwitter)`

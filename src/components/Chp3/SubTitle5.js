@@ -2,12 +2,18 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components/macro";
 import _debounce from "lodash.debounce";
 
-import { Title, SubTitle, Paragraph, Line, Underline } from "../CommonStyles";
+import {
+  Title,
+  SubTitle,
+  Paragraph,
+  Line,
+  Underline,
+} from "../../globalStyles";
 
-import Interview from "./../Interview";
+import Interview from "../Common/Interview";
 import Graph07 from "./Graphs/Graph07";
 import Graph06 from "./Graphs/Graph06";
-import { INTDataMazda, INTDataIkeda } from "./../../globalData/INTData";
+import { INTDataMazda, INTDataIkeda } from "../../data/INTData";
 
 const Text = ({ background }) => {
   const [width, setWidth] = useState(window.innerWidth);

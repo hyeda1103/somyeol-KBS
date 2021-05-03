@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components/macro";
 import { Link, useLocation } from "react-router-dom";
-import chp1 from "../assets/images/Menu/chp1.webp";
-import chp2 from "../assets/images/Menu/chp2.webp";
-import chp3 from "../assets/images/Menu/chp3.webp";
-import chp1Src from "../assets/images/Logo/Chp1Title.svg";
-import chp2Src from "../assets/images/Logo/Chp2Title.svg";
-import chp3Src from "../assets/images/Logo/Chp3Title.svg";
-import "./Hero.css";
+import { useSelector, useDispatch } from "react-redux";
+import { handleMenu } from "./../../modules/menuReducer";
 
-const MenuNav = ({ open }) => {
+import chp1 from "../../assets/images/Menu/chp1.webp";
+import chp2 from "../../assets/images/Menu/chp2.webp";
+import chp3 from "../../assets/images/Menu/chp3.webp";
+import chp1Src from "../../assets/images/Logo/Chp1Title.svg";
+import chp2Src from "../../assets/images/Logo/Chp2Title.svg";
+import chp3Src from "../../assets/images/Logo/Chp3Title.svg";
+import "../Home/Hero.css";
+
+const MenuNav = () => {
+  const { open } = useSelector((state) => ({ open: state.menu.open }));
+  const dispatch = useDispatch();
+  const onClickMenu = () => dispatch(handleMenu());
+
   const [expand, setExpand] = useState(false);
 
   let location = useLocation();
@@ -40,13 +47,20 @@ const MenuNav = ({ open }) => {
 
   return (
     <GrandParent>
-      <Parent expand={expand} open={open} left="0" delay="0">
+      <Parent
+        to="/chp1"
+        onClick={() => {
+          onClickMenu();
+          location.pathname === "/chp1" && reloadPage();
+        }}
+        $expand={expand}
+        open={open}
+        left="0"
+        delay="0"
+      >
         <CardSection bg={chp1}>
           <Container>
-            <HeroContent
-              to="/chp1"
-              onClick={location.pathname === "/chp1" ? reloadPage : null}
-            >
+            <HeroContent>
               <h1 data-aos="fade-down" data-aos-duration="600">
                 Chapter1
               </h1>
@@ -55,13 +69,20 @@ const MenuNav = ({ open }) => {
           </Container>
         </CardSection>
       </Parent>
-      <Parent expand={expand} open={open} left="calc(100vw / 3)" delay="0.1s">
+      <Parent
+        to="/chp2"
+        onClick={() => {
+          onClickMenu();
+          location.pathname === "/chp2" && reloadPage();
+        }}
+        $expand={expand}
+        open={open}
+        left="calc(100vw / 3)"
+        delay="0.1s"
+      >
         <CardSection bg={chp2}>
           <Container>
-            <HeroContent
-              to="/chp2"
-              onClick={location.pathname === "/chp2" ? reloadPage : null}
-            >
+            <HeroContent>
               <h1 data-aos="fade-down" data-aos-duration="600">
                 Chapter2
               </h1>
@@ -70,13 +91,20 @@ const MenuNav = ({ open }) => {
           </Container>
         </CardSection>
       </Parent>
-      <Parent expand={expand} open={open} left="calc(200vw / 3)" delay="0.2s">
+      <Parent
+        to="/chp3"
+        onClick={() => {
+          onClickMenu();
+          location.pathname === "/chp3" && reloadPage();
+        }}
+        $expand={expand}
+        open={open}
+        left="calc(200vw / 3)"
+        delay="0.2s"
+      >
         <CardSection bg={chp3}>
           <Container>
-            <HeroContent
-              to="/chp3"
-              onClick={location.pathname === "/chp3" ? reloadPage : null}
-            >
+            <HeroContent>
               <h1 data-aos="fade-down" data-aos-duration="600">
                 Chapter3
               </h1>
@@ -128,7 +156,7 @@ const Container = styled.div`
   }
 `;
 
-const HeroContent = styled(Link)`
+const HeroContent = styled.div`
   position: absolute;
   justify-content: center;
   align-items: center;
@@ -178,7 +206,7 @@ const GrandParent = styled.section`
   }
 `;
 
-const Parent = styled.div`
+const Parent = styled(Link)`
   position: fixed;
   display: block;
   justify-content: center;
@@ -196,9 +224,9 @@ const Parent = styled.div`
   cursor: pointer;
 
   @media screen and (max-width: 425px) {
-    margin-top: ${({ expand }) => (expand ? "60px" : "88px")};
-    height: ${({ expand }) =>
-      expand ? `calc((100vh - 60px)/3)` : `calc((100vh - 88px) / 3)`};
+    margin-top: ${({ $expand }) => ($expand ? "60px" : "88px")};
+    height: ${({ $expand }) =>
+      $expand ? `calc((100vh - 60px)/3)` : `calc((100vh - 88px) / 3)`};
     width: 100vw;
     left: 0;
     transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(-100%)")};
@@ -208,13 +236,13 @@ const Parent = styled.div`
     }
 
     &:nth-child(2) {
-      top: ${({ expand }) =>
-        expand ? `calc((100vh - 60px) / 3)` : `calc((100vh - 88px) / 3)`};
+      top: ${({ $expand }) =>
+        $expand ? `calc((100vh - 60px) / 3)` : `calc((100vh - 88px) / 3)`};
     }
 
     &:nth-child(3) {
-      top: ${({ expand }) =>
-        expand
+      top: ${({ $expand }) =>
+        $expand
           ? `calc((100vh - 60px) * 2 / 3)`
           : `calc((100vh - 88px) * 2 / 3)`};
     }

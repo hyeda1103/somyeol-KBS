@@ -1,12 +1,12 @@
-import React from 'react'
-import VideoPlayer from '../components/VideoPlayer';
+import React from "react";
+import VideoPlayer from "../components/Prologue/VideoPlayer";
 
-const Home = () => {
-    return (
-        <>
-            <VideoPlayer />
-        </>
-    )
-}
+const Prologue = () => {
+  return (
+    <>
+      <VideoPlayer />
+    </>
+  );
+};
 
-export default Home
+export default Prologue;

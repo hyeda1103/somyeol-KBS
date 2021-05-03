@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 //컴포넌트
-import Interview from "./../Interview";
+import Interview from "../Common/Interview";
 import KeplerContainer from "./Kepler/KeplerMap/KeplerContainer";
 import {
   Container,
@@ -9,9 +9,9 @@ import {
   Paragraph,
   Line,
   Underline,
-} from "./../CommonStyles";
+} from "../../globalStyles";
 // 인터뷰 데이터
-import { INTDataSohyun, INTDataGangrae02 } from "../../globalData/INTData";
+import { INTDataSohyun, INTDataGangrae02 } from "../../data/INTData";
 
 const Text = ({ background }) => {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 // 컴포넌트
-import Interview from "./../Interview";
+import Interview from "../Common/Interview";
 import {
   Section,
   Black,
@@ -10,9 +10,9 @@ import {
   Paragraph,
   Underline,
   Line,
-} from "./../CommonStyles";
+} from "../../globalStyles";
 // 인터뷰 데이터
-import { INTDataHiroya } from "./../../globalData/INTData";
+import { INTDataHiroya } from "../../data/INTData";
 
 const SubTitle = ({ background }) => {
   return (

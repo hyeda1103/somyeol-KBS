@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 // 컴포넌트
-import { Paragraph, Line, Underline } from "../CommonStyles";
+import { Paragraph, Line, Underline } from "../../globalStyles";
 // 제2부 로고 이미지
 import titleSrc from "../../assets/images/Logo/Chp2Title.svg";
 // 인트로 배경 이미지

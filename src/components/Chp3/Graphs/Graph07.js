@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Lottie from "react-lottie";
 import styled from "styled-components/macro";
 import { useInView } from "react-intersection-observer";
-import chp3_07 from "../data/animationData307.json";
+import chp3_07 from "../../../data/Chp3/animationData307.json";
 
 function ControlledLottie() {
   const [ref, inView] = useInView({

@@ -4,7 +4,7 @@ import _debounce from "lodash.debounce";
 
 // 컴포넌트
 import Slider from "./Slider/ImageSlider";
-import Interview from "./../Interview";
+import Interview from "../Common/Interview";
 import {
   Section,
   Container,
@@ -12,10 +12,10 @@ import {
   Paragraph,
   Line,
   Underline,
-} from "./../CommonStyles";
+} from "../../globalStyles";
 
 // 인터뷰 데이터
-import { INTDataAyano } from "../../globalData/INTData";
+import { INTDataAyano } from "../../data/INTData";
 
 const Text = ({ background }) => {
   const [width, setWidth] = useState(window.innerWidth);

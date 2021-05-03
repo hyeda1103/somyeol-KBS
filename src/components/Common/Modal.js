@@ -20,7 +20,7 @@ function useOnClickOutside(ref, handler) {
       document.removeEventListener("mousedown", listener);
       document.removeEventListener("touchstart", listener);
     };
-  }); // Empty array ensures that effect is only run on mount and unmount
+  });
 }
 
 const modalBackgroundPoses = {

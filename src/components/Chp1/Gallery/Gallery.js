@@ -38,7 +38,7 @@ import AudB3 from "../../../assets/audios/Chp1/Gallery/Large/Audio3.mp3";
 import AudB4 from "../../../assets/audios/Chp1/Gallery/Large/Audio4.mp3";
 import AudB5 from "../../../assets/audios/Chp1/Gallery/Large/Audio5.mp3";
 
-import Modal from "./Modal";
+import Modal from "../../Common/Modal";
 
 const Gallery = () => {
   const [wave, setWave] = useState(null);

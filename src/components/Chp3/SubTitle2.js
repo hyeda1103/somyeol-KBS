@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components/macro";
 import _debounce from "lodash.debounce";
-import { Container, Title, Paragraph, Line, Underline } from "../CommonStyles";
+import {
+  Container,
+  Title,
+  Paragraph,
+  Line,
+  Underline,
+} from "../../globalStyles";
 import card01 from "../../assets/images/Chp3/card01.png";
 import card02 from "../../assets/images/Chp3/card02.png";
 import card03 from "../../assets/images/Chp3/card03.png";

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 // 컴포넌트
-import { Paragraph, Underline, Line } from "./../CommonStyles";
+import { Paragraph, Underline, Line } from "../../globalStyles";
 // 제3부 로고 이미지
 import titleSrc from "../../assets/images/Logo/Chp3Title.svg";
 // 인트로 배경 이미지

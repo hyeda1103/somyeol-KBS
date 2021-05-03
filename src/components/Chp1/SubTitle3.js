@@ -5,7 +5,7 @@ import _debounce from "lodash.debounce";
 // 컴포넌트
 import Gallery from "./Gallery/Gallery";
 import EmptyHouseMap from "./Map/EmptyHouseMap/EmptyHouseMap";
-import { Title, Paragraph, Line, Underline } from "./../CommonStyles";
+import { Title, Paragraph, Line, Underline } from "../../globalStyles";
 
 const Text = ({ background }) => {
   const [width, setWidth] = useState(window.innerWidth);

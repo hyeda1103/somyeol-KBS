@@ -37,29 +37,21 @@ import Map from "./keplerMap";
 import Result from "./keplerResult";
 
 const KeplerContainer = () => {
-  const data = useSelector((state) => ({
+  const {
+    data,
+    config,
+    allPop,
+    youngPop,
+    youngToMetro,
+    regionName,
+  } = useSelector((state) => ({
     data: state.panel.data,
-  })).data;
-
-  const config = useSelector((state) => ({
     config: state.panel.config,
-  })).config;
-
-  const allPop = useSelector((state) => ({
     allPop: state.panel.allPop,
-  })).allPop;
-
-  const youngPop = useSelector((state) => ({
     youngPop: state.panel.youngPop,
-  })).youngPop;
-
-  const youngToMetro = useSelector((state) => ({
     youngToMetro: state.panel.youngToMetro,
-  })).youngToMetro;
-
-  const regionName = useSelector((state) => ({
     regionName: state.panel.regionName,
-  })).regionName;
+  }));
 
   const dispatch = useDispatch();
   const onToggleGangwon = () => dispatch(toggleGangwon());

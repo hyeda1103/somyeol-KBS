@@ -6,7 +6,7 @@ import DownloadIcon from "../../assets/images/DownloadButton.svg";
 import Graph02 from "./Graphs/Graph02";
 import Graph03 from "./Graphs/Graph03";
 import Graph04 from "./Graphs/Graph04";
-import Interview from "./../Interview";
+import Interview from "../Common/Interview";
 import {
   Container,
   Title,
@@ -14,9 +14,9 @@ import {
   Paragraph,
   Line,
   Underline,
-} from "./../CommonStyles";
+} from "../../globalStyles";
 // 인터뷰 데이터
-import { INTDataKyung } from "./../../globalData/INTData";
+import { INTDataKyung } from "../../data/INTData";
 
 const Text = ({ background }) => {
   return (
@@ -99,14 +99,14 @@ const Text = ({ background }) => {
             <Graph04 />
             <ButtonWrapper>
               <DownloadButton
-                href="./file01.pdf"
+                href="/data/file01.pdf"
                 download="신년 여론조사 설문지.pdf"
               >
                 <span>신년 여론조사 설문지</span>
                 <Icon src={DownloadIcon} alt="신년 여론조사 설문지 다운로드" />
               </DownloadButton>
               <DownloadButton
-                href="./file02.pdf"
+                href="/data/file02.pdf"
                 download="신년 여론조사 조사결과표.pdf"
               >
                 <span>신년 여론조사 조사결과표</span>

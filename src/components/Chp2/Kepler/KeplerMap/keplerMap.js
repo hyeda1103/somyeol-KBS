@@ -7,7 +7,7 @@ const Map = ({ data, config }) => {
   const MAPBOX_TOKEN = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
   const dispatch = useDispatch();
   useEffect(() => {
-    let data2 = require("../../data/label.json");
+    let data2 = require("../../../../data/Chp2/label.json");
     dispatch(
       addDataToMap({
         datasets: [

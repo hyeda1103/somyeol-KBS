@@ -9,12 +9,12 @@ import {
   Paragraph,
   Line,
   Underline,
-} from "../CommonStyles";
+} from "../../globalStyles";
 
-import Interview from "./../Interview";
+import Interview from "../Common/Interview";
 import Graph03 from "./Graphs/Graph03";
 import Graph04 from "./Graphs/Graph04";
-import { INTDataSangho } from "./../../globalData/INTData";
+import { INTDataSangho } from "../../data/INTData";
 
 const Text = ({ background }) => {
   const [width, setWidth] = useState(window.innerWidth);

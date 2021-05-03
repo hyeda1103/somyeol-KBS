@@ -29,12 +29,11 @@ const Cartogram = () => {
       .scale(4000)
       .translate([width / 2, height / 2]);
 
-    d3.json("./korea_map3_optimized.geojson").then(function (polygon) {
-      d3.csv("./new_offset.csv").then(function (shift1) {
+    d3.json("/data/korea_map3_optimized.geojson").then(function (polygon) {
+      d3.csv("/data/new_offset.csv").then(function (shift1) {
         let districts = polygon.features.length;
 
         function modifypoly(polyline, shift, delta) {
-          //	***********create cartogram using deformation grid************
           let l1 = polyline;
           let len = l1.length;
 
@@ -49,8 +48,6 @@ const Cartogram = () => {
           let yinterp = d3.scaleLinear();
 
           for (let j = 0; j < len; j++) {
-            //*****adjust the points one-by-one*****
-
             let a = 1;
             let b = 0.05;
             let c = -660;
@@ -145,62 +142,66 @@ const Cartogram = () => {
         let polygon7 = JSON.parse(JSON.stringify(polygon)); // 2020
 
         while (k++ < districts - 1) {
-          //***************deform the districts one-by-one
           polygon2.features[k].geometry.coordinates[0] = modifypoly(
             temppolygon.features[k].geometry.coordinates[0],
             shift1,
             1
           );
         }
+
         temppolygon = JSON.parse(JSON.stringify(polygon));
         districts = polygon.features.length;
         k = -1;
+
         while (k++ < districts - 1) {
-          //***************deform the districts one-by-one
           polygon3.features[k].geometry.coordinates[0] = modifypoly(
             temppolygon.features[k].geometry.coordinates[0],
             shift1,
             2
           );
         }
+
         temppolygon = JSON.parse(JSON.stringify(polygon));
         districts = polygon.features.length;
         k = -1;
+
         while (k++ < districts - 1) {
-          //***************deform the districts one-by-one
           polygon4.features[k].geometry.coordinates[0] = modifypoly(
             temppolygon.features[k].geometry.coordinates[0],
             shift1,
             3
           );
         }
+
         temppolygon = JSON.parse(JSON.stringify(polygon));
         districts = polygon.features.length;
         k = -1;
+
         while (k++ < districts - 1) {
-          //***************deform the districts one-by-one
           polygon5.features[k].geometry.coordinates[0] = modifypoly(
             temppolygon.features[k].geometry.coordinates[0],
             shift1,
             4
           );
         }
+
         temppolygon = JSON.parse(JSON.stringify(polygon));
         districts = polygon.features.length;
         k = -1;
+
         while (k++ < districts - 1) {
-          //***************deform the districts one-by-one
           polygon6.features[k].geometry.coordinates[0] = modifypoly(
             temppolygon.features[k].geometry.coordinates[0],
             shift1,
             5
           );
         }
+
         temppolygon = JSON.parse(JSON.stringify(polygon));
         districts = polygon.features.length;
         k = -1;
+
         while (k++ < districts - 1) {
-          //***************deform the districts one-by-one
           polygon7.features[k].geometry.coordinates[0] = modifypoly(
             temppolygon.features[k].geometry.coordinates[0],
             shift1,
@@ -209,8 +210,8 @@ const Cartogram = () => {
         }
 
         k = -1;
+
         while (k++ < districts - 1) {
-          //****************convert geographic coordinates to SVG coordinates to prevent D3 from resampling
           polygon.features[k].geometry.coordinates[0] = polygon.features[
             k
           ].geometry.coordinates[0].map(projection);
@@ -348,7 +349,7 @@ const Cartogram = () => {
         let pathn = d3.geoPath().projection(null);
 
         let worldmap = svg
-          .selectAll("path") //plot the map
+          .selectAll("path")
           .data(polygon.features)
           .enter()
           .append("path")
@@ -361,7 +362,6 @@ const Cartogram = () => {
         let dur = 1000;
         map1();
 
-        //************map transitions*********************
         function map1() {
           worldmap
             .data(polygon.features)

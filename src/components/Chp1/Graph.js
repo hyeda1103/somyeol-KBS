@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import Lottie from "react-lottie";
 import styled from "styled-components/macro";
 import { useInView } from "react-intersection-observer";
-import chp1_01 from "./data/animationData101.json";
+import chp1_01 from "./../../data/Chp1/animationData101.json";
 
 // 전국 시도별 소멸위험 자치단체 현황
 function ControlledLottie() {

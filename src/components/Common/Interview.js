@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { MdAirplay, MdPlayCircleOutline } from "react-icons/md";
 import { FaHandPointer } from "react-icons/fa";
 // 컴포넌트
-import Modal from "./Chp1/Gallery/Modal";
+import Modal from "./Modal";
 
 const Interview = ({ src, interviewee, position, lines }) => {
   const [ref, inView] = useInView({

@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { useLocation } from "react-router-dom";
-import Image from "../assets/images/mainBg.webp";
+import Image from "../../assets/images/mainBg.webp";
 
 const SEO = (props) => {
   let location = useLocation();

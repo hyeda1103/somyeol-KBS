@@ -2,13 +2,13 @@ import React, { useEffect, Suspense, lazy } from "react";
 import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { Provider } from "react-redux";
 import ReactGA from "react-ga";
-import store from "./modules";
 
-import GlobalStyle from "./globalStyles";
+import { GlobalStyle } from "./globalStyles";
 import LoadingPage from "./pages/loading";
-import ScrollToTop from "./components/ScrollToTop";
+import ScrollToTop from "./components/Common/ScrollToTop";
+import Navbar from "./components/Common/Navbar";
+import BGMplayer from "./components/Common/BGMplayer";
 
 const Homepage = lazy(() => import("./pages/index"));
 const Prologue = lazy(() => import("./pages/prologue"));
@@ -32,15 +32,15 @@ function App() {
       <Suspense fallback={<LoadingPage />}>
         <GlobalStyle />
         <ScrollToTop />
-        <Provider store={store}>
-          <Switch>
-            <Route exact path="/" component={Homepage} />
-            <Route exact path="/prologue" component={Prologue} />
-            <Route exact path="/chp1" component={Chapter1} />
-            <Route exact path="/chp2" component={Chapter2} />
-            <Route exact path="/chp3" component={Chapter3} />
-          </Switch>
-        </Provider>
+        <Navbar />
+        <BGMplayer />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/prologue" component={Prologue} />
+          <Route exact path="/chp1" component={Chapter1} />
+          <Route exact path="/chp2" component={Chapter2} />
+          <Route exact path="/chp3" component={Chapter3} />
+        </Switch>
       </Suspense>
     </Router>
   );

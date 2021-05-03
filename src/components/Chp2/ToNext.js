@@ -3,8 +3,8 @@ import styled, { css } from "styled-components/macro";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import { FacebookShareButton, TwitterShareButton } from "react-share";
 // 컴포넌트
-import { Button } from "../Button";
-import KaKaoShareButton from "../KaKao2";
+import { Button } from "../Common/Button";
+import KaKaoShareButton from "../Common/KaKao2";
 // outro 배경 이미지
 import bgImg from "../../assets/images/Chp2/outBg.webp";
 

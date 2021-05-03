@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
-import IntroImg from "../assets/images/mainBg.webp";
-import mainSrc from "../assets/images/Logo/MainTitle.svg";
-import { ReactComponent as PlayCircleButton } from "../assets/images/PlayCircle.svg";
+import IntroImg from "../../assets/images/mainBg.webp";
+import mainSrc from "../../assets/images/Logo/MainTitle.svg";
+import { ReactComponent as PlayCircleButton } from "../../assets/images/PlayCircle.svg";
 import "./Hero.css";
 
 const Hero = () => {

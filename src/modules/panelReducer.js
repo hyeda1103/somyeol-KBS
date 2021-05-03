@@ -34,8 +34,8 @@ export const toggleChungbuk = () => ({ type: TOGGLE_CHUNGBUK });
 export const toggleDefault = () => ({ type: TOGGLE_DEFAULT });
 
 const initialState = {
-  data: require("../components/Chp2/data/young_move.json"), // 젊은 인구 이동 데이터
-  config: require("../components/Chp2/data/map_config.json"), // 케플러 config
+  data: require("../data/Chp2/young_move.json"), // 젊은 인구 이동 데이터
+  config: require("../data/Chp2/map_config.json"), // 케플러 config
   allPop: 0,
   youngPop: 0,
   youngToMetro: 0,
