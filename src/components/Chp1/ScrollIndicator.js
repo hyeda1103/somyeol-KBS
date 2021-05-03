@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styled from "styled-components/macro";
 import { Link } from "react-scroll";
 
@@ -49,37 +49,37 @@ const ScrollIndicator = () => {
 
   const top = (window.innerHeight - 500) / 2 + `px`;
 
-  const handleSetActive01 = () => {
+  const handleSetActive01 = useCallback(() => {
     setArrivedSec01("#FF8A00");
-  };
+  }, []);
 
-  const handleSetInactive01 = () => {
+  const handleSetInactive01 = useCallback(() => {
     setArrivedSec01("#fff");
-  };
+  }, []);
 
-  const handleSetActive02 = () => {
+  const handleSetActive02 = useCallback(() => {
     setArrivedSec02("#FF8A00");
-  };
+  }, []);
 
-  const handleSetInactive02 = () => {
+  const handleSetInactive02 = useCallback(() => {
     setArrivedSec02("#fff");
-  };
+  }, []);
 
-  const handleSetActive03 = () => {
+  const handleSetActive03 = useCallback(() => {
     setArrivedSec03("#FF8A00");
-  };
+  }, []);
 
-  const handleSetInactive03 = () => {
+  const handleSetInactive03 = useCallback(() => {
     setArrivedSec03("#fff");
-  };
+  }, []);
 
-  const handleSetActive04 = () => {
+  const handleSetActive04 = useCallback(() => {
     setArrivedSec04("#FF8A00");
-  };
+  }, []);
 
-  const handleSetInactive04 = () => {
+  const handleSetInactive04 = useCallback(() => {
     setArrivedSec04("#fff");
-  };
+  }, []);
 
   return (
     <Section scrollPx={scrollHeight} totalPx={totalHeight}>

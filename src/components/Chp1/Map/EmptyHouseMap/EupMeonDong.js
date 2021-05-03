@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   MapContainer,
   GeoJSON,
@@ -177,9 +177,9 @@ const customStyles = {
 
 // 메인 컴포넌트
 const EupMeonDong = ({ districts }) => {
-  const [eupMeonDongName, setEupMeonDongName] = useState(null);
-  const [siDoName, setSiDoName] = useState(null);
-  const [siGunGuName, setSiGunGuName] = useState(null);
+  const [eupMeonDongName, setEupMeonDongName] = useState("");
+  const [siDoName, setSiDoName] = useState("");
+  const [siGunGuName, setSiGunGuName] = useState("");
   const [emptyCnt, setEmptyCnt] = useState(null);
   const [totalCnt, setTotalCnt] = useState(null);
   const [emptyPercentage, setEmptyPercentage] = useState(null);
@@ -278,17 +278,17 @@ const EupMeonDong = ({ districts }) => {
       }
     }, [searchResults]);
 
-    const handleSiDoInputChange = (e) => {
+    const handleSiDoInputChange = useCallback((e) => {
       setSelectedSiDo(e.label);
-    };
+    }, []);
 
-    const handleSiGunGuInputChange = (e) => {
+    const handleSiGunGuInputChange = useCallback((e) => {
       setSelectedSiGunGu(e.label);
-    };
+    }, []);
 
-    const handleEupMeonDongInputChange = (e) => {
+    const handleEupMeonDongInputChange = useCallback((e) => {
       setSelectedEupMeonDong(e.label);
-    };
+    }, []);
 
     return (
       <>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import {
   MapContainer,
   GeoJSON,
@@ -127,9 +127,9 @@ const resetHighlight = (e) => {
 
 // 메인 컴포넌트
 const EupMeonDong = ({ districts }) => {
-  const [eupMeonDongName, setEupMeonDongName] = useState(null); // 읍면동 이름
-  const [siDoName, setSiDoName] = useState(null); // 시도 이름
-  const [siGunGuName, setSiGunGuName] = useState(null); // 시군구 이름
+  const [eupMeonDongName, setEupMeonDongName] = useState(""); // 읍면동 이름
+  const [siDoName, setSiDoName] = useState(""); // 시도 이름
+  const [siGunGuName, setSiGunGuName] = useState(""); // 시군구 이름
   const [extinctIndex, setExtinctIndex] = useState(null); // 소멸지수
   const [searchPosition, setSearchPosition] = useState(null); // 검색 위치
   const [alertDanger, setAlertDanger] = useState(null); // 소멸지수에 따른 위험단계 안내
@@ -236,17 +236,17 @@ const EupMeonDong = ({ districts }) => {
       }
     }, [searchResults]);
 
-    const handleSiDoInputChange = (e) => {
+    const handleSiDoInputChange = useCallback((e) => {
       setSelectedSiDo(e.label);
-    };
+    }, []);
 
-    const handleSiGunGuInputChange = (e) => {
+    const handleSiGunGuInputChange = useCallback((e) => {
       setSelectedSiGunGu(e.label);
-    };
+    }, []);
 
-    const handleEupMeonDongInputChange = (e) => {
+    const handleEupMeonDongInputChange = useCallback((e) => {
       setSelectedEupMeonDong(e.label);
-    };
+    }, []);
 
     const customStyles = {
       control: (provided, state) => ({
