@@ -74,4 +74,4 @@ Download all the data or clone this repository by clicking the green "Clone or d
 
 ## Status
 
-The project was completed on April 4th, 2021.
+This project was completed on April 4th, 2021.
