@@ -74,10 +74,10 @@ $ yarn start
 
 ## 참고
 
-- [Statistics Korea](http://kostat.go.kr/) 원본 데이터
-- [Kepler.gl](https://kepler.gl/) 3D 지도
-- [Leaflet](https://leafletjs.com/) 2D 단계구분도
-- [D3](https://d3js.org/) 카토그램
+- [Statistics Korea](http://kostat.go.kr/) 원본 데이터 제공처
+- [Kepler.gl](https://kepler.gl/) 3D 인터렉티브 지도 개발용
+- [Leaflet](https://leafletjs.com/) 2D 인터렉티브 단계구분도 개발용
+- [D3](https://d3js.org/) 카토그램 개발용
 
 ## 라이센스
 
