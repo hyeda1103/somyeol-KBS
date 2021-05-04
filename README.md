@@ -1,4 +1,93 @@
-# Somyeol-KBS: Interactive Web with Data Visulization
+# 소멸의 땅: 데이터 저널리즘에 기반한 인터렉티브 웹
+
+> KBS 시사 다큐 '소멸의 땅'(2021년 4월 4일 KBS 시사기획 창 방영)의 [인터렉티브 웹](https://somyeol.kbs.co.kr/)입니다.
+
+## 목차
+
+- [일반 정보](#일반-정보)
+- [설정](#설정)
+- [주요 특성](#주요-특성)
+  - [2019 읍면동 단위의 빈집율 지도](#2019-읍면동-단위의-빈집율-지도)
+  - [2019 읍면동 단위의 지방소멸지도](#2019-읍면동-단위의-지방소멸지도)
+  - [시대별 인구변화를 나타내는 카토그램](#시대별-인구변화를-나타내는-카토그램)
+  - [수도권으로의 청년인구이동을 나타내는 3D 지도](#수도권으로의-청년인구이동을-나타내는-3D-지도)
+- [기술](#기술)
+- [참고](#참고)
+- [라이센스](#라이센스)
+- [English ver.](#interactive-web-documentary-with-data-visulization)
+
+## 일반 정보
+
+- 본 프로젝트는 지난 4월 4일 KBS 시사기획 창에서 방영한 '소멸의 땅'의 내용을 데이터 중심으로 정리한 인터렉티브 웹입니다. 다음 주소에서 웹사이트를 방문할 수 있습니다. <br />[https://somyeol.kbs.co.kr/](https://somyeol.kbs.co.kr/)
+- 제 1장 '위기의 전조'에는 2019년 기준 빈집율의 단계를 읍면동 단위로 구분하여 나타내는 2D 인터렉티브 지도가 있습니다. 사용자는 궁금한 지역을 입력 또는 선택하여 해당 지역의 빈집율을 얻을 수 있습니다.
+- 제 1장 '위기의 전조'에는 2019년 기준 지방소멸지수의 단계를 읍면동 단위로 구분하여 나타내는 2D 인터렉티브 지도가 있습니다. 사용자는 궁금한 지역을 입력 또는 선택하여 해당 지역의 지방소멸지수를 얻을 수 있습니다.
+- 제 2장 '쏠림과 빨림'에는 인구에 따라 지도 면적을 왜곡하여 나타내는 카토그램이 있습니다. 사용자는 연도를 선택하여 시대에 따라 수도권과 비수도권의 인구밀집이 어떻게 변화하였는지 시각적으로 파악할 수 있습니다.
+- 제 2장 '쏠림과 빨림'에는 청년인구의 이동을 나타내는 3D 인터렉티브 지도가 있습니다. 사용자는 궁금한 지역을 선택하여 해당 지역에서 수도권으로 이동한 청년인구의 비율을 얻을 수 있습니다.
+
+## 설정
+
+다음과 같이 yarn을 사용하여 프로젝트를 실행할 수 있습니다:
+
+```
+$ cd ../somyeol-KBS
+$ yarn
+$ yarn start
+```
+
+## 주요 특성
+
+### 2019 빈집율을 나타내는 읍면동 지도
+
+<img src="https://i.ibb.co/wzjPbvd/empty-house.gif" alt="카토그램" width="500" />
+
+- 2019년 기준 우리나라의 빈집율을 읍면동 단위로 나타낸 2D 인터렉티브 지도로, `Leaflet`을 사용하여 만들었습니다.
+- 지도에 사용된 데이터는 [popData_optimized.json](./src/components/Chp1/data/popData_optimized.json)입니다.
+
+### 2019 읍면동 단위의 지방소멸지도
+
+<img src="https://i.ibb.co/S61FDnr/extinction.gif" alt="카토그램" width="500" />
+
+- 2019년 기준 우리나라의 소멸위험지수를 읍면동 단위로 나타낸 2D 인터렉티브 지도로, `Leaflet`을 사용하여 만들었습니다.
+- 지도에 사용된 데이터는 [popData_optimized.json](./src/components/Chp1/data/popData_optimized.json)입니다.
+
+### 시대별 인구변화를 나타내는 카토그램
+
+<img src="https://i.ibb.co/DtgBwVM/cartogram.gif" alt="카토그램" width="500" />
+
+- 우리나라의 시대별 인구변화를 면적의 왜곡으로 나타내는 지도로, `D3.js`를 사용하여 만들었습니다. 각 지역의 인구 수는 면적 크기와 비례합니다.
+- 지도에 사용된 데이터는 [korea_map3_optimized.geojson](./public/korea_map3_optimized.geojson)과 [new_offset.csv](./public/new_offset.csv)입니다.
+
+### 수도권으로의 청년인구이동을 나타내는 3D 지도
+
+<img src="https://i.ibb.co/PxQxnN0/kepler.gif" alt="3D 수도권 인구 이동 지도" width="500" />
+
+- 비수도권에서 수도권으로 이동한 청년인구를 나타내는 3D 지도로, `Kepler`와 `redux`를 사용하여 만들었습니다.
+- 지도에 사용된 데이터는 [young_move.json](./src/components/Chp2/data/young_move.json')과 [map_config.json](./src/components/Chp2/data/map_config.json)입니다.
+  <br /><br />
+
+상단에 있는 연두색의 "Clone or download" 버튼을 클릭하여 본 프로젝트에 사용된 소스 코드 및 데이터를 모두 다운로드받을 수 있습니다.
+
+## 기술
+
+- 본 프로젝트는 [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html)를 사용하였습니다.
+- 루트 디렉토리에 있는 `package.json`에서 프로젝트 개발에 사용된 모든 dependency를 확인할 수 있습니다.
+
+## 참고
+
+- [Statistics Korea](http://kostat.go.kr/) 원본 데이터
+- [Kepler.gl](https://kepler.gl/) 3D 지도
+- [Leaflet](https://leafletjs.com/) 2D 단계구분도
+- [D3](https://d3js.org/) 카토그램
+
+## 라이센스
+
+- 고다혜, 웹 개발 - dalgona92@gmail.com
+- 최동혁, 데이터 시각화 - nerdinary@gmail.com
+- [https://github.com/hyeda1103/somyeol-KBS/blob/main/LICENSE.md](https://github.com/hyeda1103/somyeol-KBS/blob/main/LICENSE.md)
+
+---
+
+# Interactive Web Documentary with Data Visulization
 
 ## Table of contents
 
@@ -63,7 +152,7 @@ $ yarn start
 
 - This 3D map visualize the out-migration of young population, from outside to inside Seoul capital area in South Korea.
 - A private MAPBOX access token is required to import 3D map.
-- This map is made with `Kepler` and `react-redux`
+- This map is made with `Kepler` and `redux`
 - Data can be found in [young_move.json](./src/components/Chp2/data/young_move.json') and [map_config.json](./src/components/Chp2/data/map_config.json)
 
 Download all the data or clone this repository by clicking the green "Clone or download" button above.
