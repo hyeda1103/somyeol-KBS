@@ -65,7 +65,7 @@ $ yarn start
 - 지도에 사용된 데이터는 [young_move.json](./src/components/Chp2/data/young_move.json')과 [map_config.json](./src/components/Chp2/data/map_config.json)입니다.
   <br /><br />
 
-상단에 있는 연두색의 "Clone or download" 버튼을 클릭하여 본 프로젝트에 사용된 소스 코드 및 데이터를 모두 다운로드받을 수 있습니다.
+상단에 있는 연두색의 "Clone or download" 버튼을 클릭하여 본 프로젝트에 사용된 소스 코드 및 데이터를 모두 다운로드할 수 있습니다.
 
 ## 기술
 
