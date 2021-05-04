@@ -36,7 +36,7 @@ $ yarn start
 
 ## 주요 특성
 
-### 2019 빈집율을 나타내는 읍면동 지도
+### 2019 읍면동 단위의 빈집율 지도
 
 <img src="https://i.ibb.co/wzjPbvd/empty-house.gif" alt="카토그램" width="500" />
 
