@@ -83,5 +83,6 @@ Download all the data or clone this repository by clicking the green "Clone or d
 
 ## License
 
+- Dahye Ko as Web Developer - dalgona92@gmail.com
 - Donghyuk Choi as Data Scientist - nerdinary@gmail.com
 - [https://github.com/hyeda1103/somyeol-KBS/blob/main/LICENSE.md](https://github.com/hyeda1103/somyeol-KBS/blob/main/LICENSE.md)
