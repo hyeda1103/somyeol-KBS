@@ -70,7 +70,7 @@ Download all the data or clone this repository by clicking the green "Clone or d
 
 ## Technologies
 
-- This project is created with [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html).
+- This project is built with [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html).
 - Used dependencies and versions can be found in `package.json` in the project root.
 
 ## Reference
