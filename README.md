@@ -76,7 +76,7 @@ Download all the data or clone this repository by clicking the green "Clone or d
 ## Reference
 
 - [Kepler.gl](https://kepler.gl/) for <strong>3D interactive map</strong>
-- [Leaflet](https://leafletjs.com/) for <strong>2D interactive map</strong>
+- [Leaflet](https://leafletjs.com/) for <strong>2D interactive choropleth map</strong>
 - [D3](https://d3js.org/) for <strong>Cartogram</strong>
 - [Lottie](https://airbnb.io/lottie/#/) for <strong>Animated Graphs</strong>
 - [ReactPlayer](https://www.npmjs.com/package/react-player) for <strong>Custom Video Player</strong>
