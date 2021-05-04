@@ -70,7 +70,7 @@ $ yarn start
 ## 기술
 
 - 본 프로젝트는 [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html)를 사용하였습니다.
-- 루트 디렉토리에 있는 `package.json`에서 프로젝트 개발에 사용된 모든 dependency를 확인할 수 있습니다.
+- `package.json`에서 프로젝트 개발에 사용된 모든 dependency를 확인할 수 있습니다.
 
 ## 참고
 
