@@ -10,12 +10,13 @@
   - [Cartogram](#cartogram)
   - [3D Map](#3d-map)
 - [Technologies](#technologies)
-- [Status](#status)
+- [Reference](#reference)
+- [License](#license)
 
 ## General Info
 
 - Interactive Web Documentary with Data Visualization
-- Based on [소멸의 땅](http://vod.kbs.co.kr/index.html?source=episode&sname=vod&stype=vod&program_code=T2011-1097&program_id=PS-2021000586-01-000&broadcast_complete_yn=N&local_station_code=00&section_code=05&section_sub_code=06#more) aired on KBS, April 4th, 2021
+- Contents based on [소멸의 땅](http://vod.kbs.co.kr/index.html?source=episode&sname=vod&stype=vod&program_code=T2011-1097&program_id=PS-2021000586-01-000&broadcast_complete_yn=N&local_station_code=00&section_code=05&section_sub_code=06#more) aired on KBS, April 4th, 2021
 
 - Visit website: [https://somyeol.kbs.co.kr/](https://somyeol.kbs.co.kr/)
 
@@ -72,6 +73,13 @@ Download all the data or clone this repository by clicking the green "Clone or d
 - This project is created with [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html).
 - Used dependencies and versions can be found in `package.json` in the project root.
 
-## Status
+## Reference
 
-This project was completed on April 4th, 2021.
+- [Kepler.gl](https://kepler.gl/)
+- [Leaflet](https://leafletjs.com/)
+- [D3](https://d3js.org/)
+
+## License
+
+- Donghyuk Choi as Data Scientist - nerdinary@gmail.com
+- [https://github.com/hyeda1103/somyeol-KBS/blob/main/LICENSE.md](https://github.com/hyeda1103/somyeol-KBS/blob/main/LICENSE.md)
