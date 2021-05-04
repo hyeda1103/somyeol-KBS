@@ -61,7 +61,7 @@ $ yarn start
 
 <img src="https://i.ibb.co/PxQxnN0/kepler.gif" alt="3D 수도권 인구 이동 지도" width="500" />
 
-- 비수도권에서 수도권으로 이동한 청년인구를 나타내는 3D 지도로, `Kepler`와 `redux`를 사용하여 만들었습니다.
+- 비수도권에서 수도권으로 이동한 청년인구를 나타내는 3D 지도로, `kepler.gl`와 `redux`를 사용하여 만들었습니다.
 - 지도에 사용된 데이터는 [young_move.json](./src/components/Chp2/data/young_move.json')과 [map_config.json](./src/components/Chp2/data/map_config.json)입니다.
   <br /><br />
 
