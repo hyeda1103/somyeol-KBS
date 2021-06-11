@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { taskMiddleware } from "react-palm/tasks";
-import { composeWithDevTools } from "redux-devtools-extension"; // 리덕스 개발자 도구
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly" // 리덕스 개발자 도구
 
 // 리듀서
 import panelReducer from "./panelReducer";
