@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Suspense, lazy } from 'react'
 import styled from "styled-components/macro";
 //컴포넌트
 import Interview from "../Common/Interview";
-import KeplerContainer from "./Kepler/KeplerMap/KeplerContainer";
+// import KeplerContainer from "./Kepler/KeplerMap/KeplerContainer";
 import {
   Container,
   Title,
@@ -10,8 +10,12 @@ import {
   Line,
   Underline,
 } from "../../globalStyles";
+import Spinner from './../Common/Spinner'
 // 인터뷰 데이터
 import { INTDataSohyun, INTDataGangrae02 } from "../../data/INTData";
+
+const KeplerContainer = lazy(() => import('./Kepler/KeplerMap/KeplerContainer'))
+
 
 const Text = ({ background }) => {
   return (
@@ -75,7 +79,9 @@ const Text = ({ background }) => {
             </TextWrapper>
           </Container>
         </Section>
-        <KeplerContainer />
+        <Suspense fallback={<Spinner />}>
+          <KeplerContainer />
+        </Suspense>
         {/* 마강래 인터뷰 */}
         <Interview {...INTDataGangrae02} />
       </Black>
