@@ -4,14 +4,21 @@ import ReactPlayer from "react-player/lazy";
 import { useInView } from "react-intersection-observer";
 import { MdAirplay, MdPlayCircleOutline } from "react-icons/md";
 import { FaHandPointer } from "react-icons/fa";
+import Loadable from "react-loadable";
+import Spinner from "./Spinner"
 // 컴포넌트
-import Modal from "./Modal";
+// import Modal from "./Modal";
+
+const AsyncModal = Loadable({
+  loader: () => import(/* webpackChunkName: 'IntModalComponent' */ './Modal'),
+  loading: Spinner
+})
 
 const Interview = ({ src, interviewee, position, lines }) => {
   const [ref, inView] = useInView({
     threshold: 0,
   });
-  const [show, setShow] = useState(true);
+  const [showCursor, setShowCursor] = useState(true);
   const [isModalOpen, toggleModal] = useState(false);
   return (
     <Section>
@@ -27,11 +34,11 @@ const Interview = ({ src, interviewee, position, lines }) => {
             <PlayWrapper>
               <PlayCircle
                 onClick={() => {
-                  toggleModal(!isModalOpen);
-                  setShow(false);
+                  toggleModal(!isModalOpen)
+                  setShowCursor(false)
                 }}
               />
-              <CursorWrapper ref={ref} inView={inView} show={show}>
+              <CursorWrapper ref={ref} inView={inView} show={showCursor}>
                 <Cursor />
               </CursorWrapper>
             </PlayWrapper>
@@ -39,20 +46,15 @@ const Interview = ({ src, interviewee, position, lines }) => {
           <Divider />
           <Script>{lines}</Script>
           {/* 인터뷰 영상 */}
-          <Modal isOpen={isModalOpen} toggle={toggleModal}>
-            <ReactPlayer
-              width="100%"
-              height="100%"
-              url={src}
-              controls
-              playing={isModalOpen}
-              volume={0.5}
-            />
-          </Modal>
+          {isModalOpen && (
+            <AsyncModal isOpen={isModalOpen} toggle={toggleModal}>
+              <ReactPlayer width="100%" height="100%" url={src} controls playing={isModalOpen} volume={0.5} />
+            </AsyncModal>
+          )}
         </TextWrapper>
       </Container>
     </Section>
-  );
+  )
 };
 
 export default React.memo(Interview);

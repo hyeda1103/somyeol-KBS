@@ -38,7 +38,14 @@ import AudB3 from "../../../assets/audios/Chp1/Gallery/Large/Audio3.mp3";
 import AudB4 from "../../../assets/audios/Chp1/Gallery/Large/Audio4.mp3";
 import AudB5 from "../../../assets/audios/Chp1/Gallery/Large/Audio5.mp3";
 
-import Modal from "../../Common/Modal";
+// import Modal from "../../Common/Modal";
+import Loadable from 'react-loadable'
+import Spinner from './../../Common/Spinner';
+
+const AsyncModal = Loadable({
+  loader: () => import(/* webpackChunkName: 'GalleryModalComponent' */ './../../Common/Modal'),
+  loading: Spinner
+})
 
 const Gallery = () => {
   const [wave, setWave] = useState(null);
@@ -144,11 +151,7 @@ const Gallery = () => {
           <SubTitleWrapper>
             <SubTitle>농산어촌 및 소도시</SubTitle>
           </SubTitleWrapper>
-          <PhotoContainer
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-once="true"
-          >
+          <PhotoContainer data-aos="fade-up" data-aos-duration="600" data-aos-once="true">
             <PhotoWrapper onClick={() => toggleModal1a(!isModalOpen1a)}>
               <Photo background={ImgS1} alt="농산어촌 및 소도시01">
                 <Black>
@@ -190,12 +193,7 @@ const Gallery = () => {
           <SubTitleWrapper>
             <SubTitle>중소도시</SubTitle>
           </SubTitleWrapper>
-          <PhotoContainer
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="50"
-            data-aos-once="true"
-          >
+          <PhotoContainer data-aos="fade-up" data-aos-duration="600" data-aos-delay="50" data-aos-once="true">
             <PhotoWrapper onClick={() => toggleModal2a(!isModalOpen2a)}>
               <Photo background={ImgM1} alt="중소도시01">
                 <Black>
@@ -237,12 +235,7 @@ const Gallery = () => {
           <SubTitleWrapper>
             <SubTitle>대도시</SubTitle>
           </SubTitleWrapper>
-          <PhotoContainer
-            data-aos="fade-up"
-            data-aos-duration="600"
-            data-aos-delay="100"
-            data-aos-once="true"
-          >
+          <PhotoContainer data-aos="fade-up" data-aos-duration="600" data-aos-delay="100" data-aos-once="true">
             <PhotoWrapper onClick={() => toggleModal3a(!isModalOpen3a)}>
               <Photo background={ImgB1} alt="대도시02">
                 <Black>
@@ -283,104 +276,100 @@ const Gallery = () => {
       </Section>
 
       {/* 대도시 인터뷰 */}
-      <Modal isOpen={isModalOpen3a} toggle={toggleModal3a}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal3a(false)} />
-          <ModalImg src={ImgB1} alt="대도시01" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>이병호</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>부산시 영도구</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              “옛날에는 반상회도 하고 관리도 잘하고, 옛날에는 좋았어요. (지금은)
-              다 나가버렸어요. 다들 나간 줄도 모르게 나가버렸어요.”
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen3a && (
+        <AsyncModal isOpen={isModalOpen3a} toggle={toggleModal3a}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal3a(false)} />
+            <ModalImg src={ImgB1} alt="대도시01" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>이병호</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>부산시 영도구</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>“옛날에는 반상회도 하고 관리도 잘하고, 옛날에는 좋았어요. (지금은) 다 나가버렸어요. 다들 나간 줄도 모르게 나가버렸어요.”</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen3b} toggle={toggleModal3b}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal3b(false)} />
-          <ModalImg src={ImgB2} alt="대도시02" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>강수궁</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>부산시 영도구</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              “너무 서글픕니다. 슬픕니다. 그냥 영도 자체가 없어진다고 하면,
-              인구가 없어진다고 하면 마음이 이상해집니다.”
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen3b &&        
+        (<AsyncModal isOpen={isModalOpen3b} toggle={toggleModal3b}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal3b(false)} />
+            <ModalImg src={ImgB2} alt="대도시02" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>강수궁</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>부산시 영도구</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>“너무 서글픕니다. 슬픕니다. 그냥 영도 자체가 없어진다고 하면, 인구가 없어진다고 하면 마음이 이상해집니다.”</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+        )}
 
-      <Modal isOpen={isModalOpen3c} toggle={toggleModal3c}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal3c(false)} />
-          <ModalImg src={ImgB3} alt="대도시03" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>이재정</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>부산복지개발원 연구위원</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              “부산은 대도시이지만, 2021년, 2022년이 되면 초고령사회로 진입할
-              것이기 때문에, 노인이 많은 지역이고 바다를 끼고 있어서 ‘노인과
-              바다’ 그런 얘기가 나와요.”
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen3c &&
+        (
+        <AsyncModal isOpen={isModalOpen3c} toggle={toggleModal3c}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal3c(false)} />
+            <ModalImg src={ImgB3} alt="대도시03" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>이재정</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>부산복지개발원 연구위원</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>“부산은 대도시이지만, 2021년, 2022년이 되면 초고령사회로 진입할 것이기 때문에, 노인이 많은 지역이고 바다를 끼고 있어서 ‘노인과 바다’ 그런 얘기가 나와요.”</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen3d} toggle={toggleModal3d}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal3c(false)} />
-          <ModalImg src={ImgB4} alt="대도시04" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>윤재선</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 창원시 월영동</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              "이집도 비었고 저집도 비었고 저기 밑에 전부 다 빈집이에요."
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen3d &&(
+        <AsyncModal isOpen={isModalOpen3d} toggle={toggleModal3d}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal3c(false)} />
+            <ModalImg src={ImgB4} alt="대도시04" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>윤재선</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 창원시 월영동</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>"이집도 비었고 저집도 비었고 저기 밑에 전부 다 빈집이에요."</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen3e} toggle={toggleModal3e}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal3c(false)} />
-          <ModalImg src={ImgB5} alt="대도시05" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>윤재선</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 창원시 월영동</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              "(빈집에) 노숙자들이 들어와서 술도 마셔요. 어디 사람인지도 몰라요.
-              항상 겁이 나는 게, 겨울에 담배꽁초 하나라도 던지면 빈집만 타는 게
-              아니라 온 동네로 불이 번지니까."
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen3e &&
+        <AsyncModal isOpen={isModalOpen3e} toggle={toggleModal3e}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal3c(false)} />
+            <ModalImg src={ImgB5} alt="대도시05" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>윤재선</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 창원시 월영동</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>"(빈집에) 노숙자들이 들어와서 술도 마셔요. 어디 사람인지도 몰라요. 항상 겁이 나는 게, 겨울에 담배꽁초 하나라도 던지면 빈집만 타는 게 아니라 온 동네로 불이 번지니까."</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      }
 
       {/* 중소도시 인터뷰 */}
-      <Modal isOpen={isModalOpen2a} toggle={toggleModal2a}>
+      {isModalOpen2a &&
+        <AsyncModal isOpen={isModalOpen2a} toggle={toggleModal2a}>
         <ModalSection>
           <CloseBtn onClick={() => toggleModal2a(false)} />
           <ModalImg src={ImgM1} alt="중소도시01" />
@@ -391,16 +380,13 @@ const Gallery = () => {
               <ModalTitle>전북 익산시 공인중개사</ModalTitle>
             </ModalTitleSection>
             <Divider />
-            <ModalScript>
-              “옛날에 전성기를 누렸던 그런 가옥들인데, 지금 현재는 다 떠나고 다
-              비어있는 거죠. 부동산 거래를 하려면 경매로만 처분이 안 될 정도로
-              수요가 없어요.”
-            </ModalScript>
+            <ModalScript>“옛날에 전성기를 누렸던 그런 가옥들인데, 지금 현재는 다 떠나고 다 비어있는 거죠. 부동산 거래를 하려면 경매로만 처분이 안 될 정도로 수요가 없어요.”</ModalScript>
           </ModalTextContainer>
         </ModalSection>
-      </Modal>
+      </AsyncModal>}
 
-      <Modal isOpen={isModalOpen2b} toggle={toggleModal2b}>
+      {isModalOpen2b &&
+        <AsyncModal isOpen={isModalOpen2b} toggle={toggleModal2b}>
         <ModalSection>
           <CloseBtn onClick={() => toggleModal2b(false)} />
           <ModalImg src={ImgM2} alt="증소도시02" />
@@ -411,16 +397,13 @@ const Gallery = () => {
               <ModalTitle>전북 익산시</ModalTitle>
             </ModalTitleSection>
             <Divider />
-            <ModalScript>
-              “역 앞이고 버스터미널이고 (사람이) 많이 있었는데, 익산역으로 오면,
-              그때는 팥죽 장사도 있고 옆에 거리에 장사하는 사람들이 많이
-              있었는데 (지금은 없어요).”
-            </ModalScript>
+            <ModalScript>“역 앞이고 버스터미널이고 (사람이) 많이 있었는데, 익산역으로 오면, 그때는 팥죽 장사도 있고 옆에 거리에 장사하는 사람들이 많이 있었는데 (지금은 없어요).”</ModalScript>
           </ModalTextContainer>
         </ModalSection>
-      </Modal>
+      </AsyncModal>}
 
-      <Modal isOpen={isModalOpen2c} toggle={toggleModal2c}>
+      {isModalOpen2c &&
+        <AsyncModal isOpen={isModalOpen2c} toggle={toggleModal2c}>
         <ModalSection>
           <CloseBtn onClick={() => toggleModal2c(false)} />
           <ModalImg src={ImgM3} alt="중소도시03" />
@@ -431,16 +414,13 @@ const Gallery = () => {
               <ModalTitle>전북 익산시</ModalTitle>
             </ModalTitleSection>
             <Divider />
-            <ModalScript>
-              “허망하죠. 감미당도 없어지고, 송수당도 없어지고, 이리극장도
-              없어지면서, 이쪽은 더 쇠락해 갈 수 밖에... 그런 안타까운 현실이
-              됐죠.”
-            </ModalScript>
+            <ModalScript>“허망하죠. 감미당도 없어지고, 송수당도 없어지고, 이리극장도 없어지면서, 이쪽은 더 쇠락해 갈 수 밖에... 그런 안타까운 현실이 됐죠.”</ModalScript>
           </ModalTextContainer>
         </ModalSection>
-      </Modal>
+      </AsyncModal>}
 
-      <Modal isOpen={isModalOpen2d} toggle={toggleModal2d}>
+      {isModalOpen2d &&
+        <AsyncModal isOpen={isModalOpen2d} toggle={toggleModal2d}>
         <ModalSection>
           <CloseBtn onClick={() => toggleModal2d(false)} />
           <ModalImg src={ImgM4} alt="증소도시04" />
@@ -451,130 +431,121 @@ const Gallery = () => {
               <ModalTitle>경남 진주시 충무공동</ModalTitle>
             </ModalTitleSection>
             <Divider />
-            <ModalScript>
-              "3만 명이 안 되는 자리에 상가들이 보시다시피 너무 많이 건축이 되다
-              보니까, 공실이 발생될 수 밖에 없는 거예요"
-            </ModalScript>
+            <ModalScript>"3만 명이 안 되는 자리에 상가들이 보시다시피 너무 많이 건축이 되다 보니까, 공실이 발생될 수 밖에 없는 거예요"</ModalScript>
           </ModalTextContainer>
         </ModalSection>
-      </Modal>
+      </AsyncModal>}
 
-      <Modal isOpen={isModalOpen2e} toggle={toggleModal2e}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal2e(false)} />
-          <ModalImg src={ImgM5} alt="중소도시05" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>김도현</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 거제시 옥포동</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              "숙녀복, 메리야스, 란제리 같은 것을 팔았어요. 장사가 잘 안되다
-              보니까 개인파산 신청을 하고 나갔어요."
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen2e && (
+        <AsyncModal isOpen={isModalOpen2e} toggle={toggleModal2e}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal2e(false)} />
+            <ModalImg src={ImgM5} alt="중소도시05" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>김도현</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 거제시 옥포동</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>"숙녀복, 메리야스, 란제리 같은 것을 팔았어요. 장사가 잘 안되다 보니까 개인파산 신청을 하고 나갔어요."</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
       {/* 농산어촌 및 소도시 인터뷰 */}
-      <Modal isOpen={isModalOpen1a} toggle={toggleModal1a}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal1a(false)} />
-          <ModalImg src={ImgS1} alt="농산어촌 및 소도시01" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>허덕순</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 의령군 궁류면</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              “이 동네는 젊은 사람은 다 나가고 동네는 폐쇄됐어. 옛날에
-              (사람들이) 많이 살 때는 소도 많이 길렀는데….”
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen1a && (
+        <AsyncModal isOpen={isModalOpen1a} toggle={toggleModal1a}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal1a(false)} />
+            <ModalImg src={ImgS1} alt="농산어촌 및 소도시01" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>허덕순</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 의령군 궁류면</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>“이 동네는 젊은 사람은 다 나가고 동네는 폐쇄됐어. 옛날에 (사람들이) 많이 살 때는 소도 많이 길렀는데….”</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen1b} toggle={toggleModal1b}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal1b(false)} />
-          <ModalImg src={ImgS2} alt="농산어촌 및 소도시02" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>남정숙</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 의령군 궁류초등학교장</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              “매년 학생 수가 급격하게 줄고 있어요. 전교생이 10명 밖에 되지 않아
-              교육과정 운영에 어려움이 있을까 큰 걱정입니다.”
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen1b && (
+        <AsyncModal isOpen={isModalOpen1b} toggle={toggleModal1b}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal1b(false)} />
+            <ModalImg src={ImgS2} alt="농산어촌 및 소도시02" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>남정숙</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 의령군 궁류초등학교장</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>“매년 학생 수가 급격하게 줄고 있어요. 전교생이 10명 밖에 되지 않아 교육과정 운영에 어려움이 있을까 큰 걱정입니다.”</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen1c} toggle={toggleModal1c}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal1c(false)} />
-          <ModalImg src={ImgS3} alt="농산어촌 및 소도시03" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>제순달</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 산청군 차황면</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              “한 집 건너 한집이 다 비었어요. 저쪽에 빈집이 많아요. 저기
-              건너편에도 전부 다 빈집이에요.”{" "}
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen1c && (
+        <AsyncModal isOpen={isModalOpen1c} toggle={toggleModal1c}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal1c(false)} />
+            <ModalImg src={ImgS3} alt="농산어촌 및 소도시03" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>제순달</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 산청군 차황면</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>“한 집 건너 한집이 다 비었어요. 저쪽에 빈집이 많아요. 저기 건너편에도 전부 다 빈집이에요.” </ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen1d} toggle={toggleModal1d}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal1d(false)} />
-          <ModalImg src={ImgS4} alt="농산어촌 및 소도시04" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>주민</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경북 의성군 안계면</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              "이 병원이 없다고 보면 상당히 불안하죠. 목숨 마저도 정부에서
-              차별을 한다고 하면 정말로 분개하지 않을 수가 없죠."
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen1d && (
+        <AsyncModal isOpen={isModalOpen1d} toggle={toggleModal1d}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal1d(false)} />
+            <ModalImg src={ImgS4} alt="농산어촌 및 소도시04" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>주민</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경북 의성군 안계면</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>"이 병원이 없다고 보면 상당히 불안하죠. 목숨 마저도 정부에서 차별을 한다고 하면 정말로 분개하지 않을 수가 없죠."</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
 
-      <Modal isOpen={isModalOpen1e} toggle={toggleModal1e}>
-        <ModalSection>
-          <CloseBtn onClick={() => toggleModal1e(false)} />
-          <ModalImg src={ImgS5} alt="농산어촌 및 소도시05" />
-          <ModalTextContainer>
-            <ModalTitleSection>
-              <ModalTitle>조윤환</ModalTitle>
-              <VerticalBar />
-              <ModalTitle>경남 하동군 옥종면</ModalTitle>
-            </ModalTitleSection>
-            <Divider />
-            <ModalScript>
-              "(인구 감소로) 이 병원이 없어지면 우리 하동은 치명적입니다. 이
-              병원이 꼭 유지가 돼야해요. 문을 닫는 경우가 생겨서는 안 되죠."
-            </ModalScript>
-          </ModalTextContainer>
-        </ModalSection>
-      </Modal>
+      {isModalOpen1e && (
+        <AsyncModal isOpen={isModalOpen1e} toggle={toggleModal1e}>
+          <ModalSection>
+            <CloseBtn onClick={() => toggleModal1e(false)} />
+            <ModalImg src={ImgS5} alt="농산어촌 및 소도시05" />
+            <ModalTextContainer>
+              <ModalTitleSection>
+                <ModalTitle>조윤환</ModalTitle>
+                <VerticalBar />
+                <ModalTitle>경남 하동군 옥종면</ModalTitle>
+              </ModalTitleSection>
+              <Divider />
+              <ModalScript>"(인구 감소로) 이 병원이 없어지면 우리 하동은 치명적입니다. 이 병원이 꼭 유지가 돼야해요. 문을 닫는 경우가 생겨서는 안 되죠."</ModalScript>
+            </ModalTextContainer>
+          </ModalSection>
+        </AsyncModal>
+      )}
     </>
-  );
+  )
 };
 
 export default Gallery;
