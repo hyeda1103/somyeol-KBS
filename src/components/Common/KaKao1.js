@@ -13,28 +13,27 @@ const KaKaoShare = ({ font, background, radius, padding }) => {
         window.Kakao.init(process.env.REACT_APP_KAKAO_KEY);
       }
       window.Kakao.Link.createDefaultButton({
-        container: "#kakao-link-btn",
-        objectType: "feed",
+        container: '#kakao-link-btn',
+        objectType: 'feed',
         content: {
-          title: "소멸의 땅, 지방은 어떻게 사라지나",
-          description:
-            "#지방소멸 #균형발전 #지방 #소멸 #KBS #시사기획창 #수도권 #수도권공화국 #서울공화국 #블랙홀 #지역발전 #지방분권 #공멸 #저출산 #서울민국",
-          imageUrl: "https://i.ibb.co/wYkJc1W/og-image.jpg",
+          title: '소멸의 땅, 지방은 어떻게 사라지나',
+          description: '#지방소멸 #균형발전 #지방 #소멸 #KBS #시사기획창 #수도권 #수도권공화국 #서울공화국 #블랙홀 #지역발전 #지방분권 #공멸 #저출산 #서울민국',
+          imageUrl: 'https://i.ibb.co/wYkJc1W/og-image.jpg',
           link: {
-            mobileWebUrl: "https://somyeol.kbs.co.kr",
-            webUrl: "https://somyeol.kbs.co.kr",
+            mobileWebUrl: 'https://news.kbs.co.kr/special/somyeol',
+            webUrl: 'https://news.kbs.co.kr/special/somyeol',
           },
         },
         buttons: [
           {
-            title: "웹으로 보기",
+            title: '웹으로 보기',
             link: {
-              mobileWebUrl: "https://somyeol.kbs.co.kr",
-              webUrl: "https://somyeol.kbs.co.kr",
+              mobileWebUrl: 'https://news.kbs.co.kr/special/somyeol',
+              webUrl: 'https://news.kbs.co.kr/special/somyeol',
             },
           },
         ],
-      });
+      })
     }
   };
 

@@ -21,16 +21,16 @@ const KaKaoShare = ({ font, background, radius, padding }) => {
             "#지방소멸 #균형발전 #지방 #소멸 #KBS #시사기획창 #수도권 #수도권공화국 #서울공화국 #블랙홀 #지역발전 #지방분권 #공멸 #저출산 #서울민국",
           imageUrl: "https://i.ibb.co/wYkJc1W/og-image.jpg",
           link: {
-            mobileWebUrl: "https://somyeol.kbs.co.kr",
-            webUrl: "https://somyeol.kbs.co.kr",
+            mobileWebUrl: "https://news.kbs.co.kr/special/somyeol",
+            webUrl: "https://news.kbs.co.kr/special/somyeol",
           },
         },
         buttons: [
           {
             title: "웹으로 보기",
             link: {
-              mobileWebUrl: "https://somyeol.kbs.co.kr",
-              webUrl: "https://somyeol.kbs.co.kr",
+              mobileWebUrl: "https://news.kbs.co.kr/special/somyeol",
+              webUrl: "https://news.kbs.co.kr/special/somyeol",
             },
           },
         ],
