@@ -1,6 +1,6 @@
 # 소멸의 땅: 데이터 저널리즘에 기반한 인터렉티브 웹
 
-> KBS 시사 다큐 '소멸의 땅'(2021년 4월 4일 KBS 시사기획 창 방영)의 [인터렉티브 웹](https://somyeol.kbs.co.kr/)입니다.
+> KBS 시사 다큐 '소멸의 땅'(2021년 4월 4일 KBS 시사기획 창 방영)의 [인터렉티브 웹](https://somyeol.kbs.co.kr/)입니다. (이전 작업 중)
 
 ## 목차
 
@@ -152,7 +152,7 @@ $ yarn start
 
 - This 3D map visualize the out-migration of young population, from outside to inside Seoul capital area in South Korea.
 - A private MAPBOX access token is required to import 3D map.
-- This map is made with `Kepler` and `redux`
+- This map is made with `kepler.gl` and `redux`
 - Data can be found in [young_move.json](./src/components/Chp2/data/young_move.json') and [map_config.json](./src/components/Chp2/data/map_config.json)
 
 Download all the data or clone this repository by clicking the green "Clone or download" button above.
