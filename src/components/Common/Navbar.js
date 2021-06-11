@@ -102,7 +102,7 @@ const Navbar = () => {
           />
           {/* 페이스북 */}
           <FacebookShareButton
-            url={"https://somyeol.kbs.co.kr"}
+            url={"https://news.kbs.co.kr/special/somyeol"}
             quote={"소멸의 땅, 지방은 어떻게 사라지나"}
             hashtag="#지방소멸"
             style={{ outline: "none", margin: "0 28.3px" }}
@@ -111,7 +111,7 @@ const Navbar = () => {
           </FacebookShareButton>
           {/* 트위터 */}
           <TwitterShareButton
-            url={"https://somyeol.kbs.co.kr"}
+            url={"https://news.kbs.co.kr/special/somyeol"}
             quote={"소멸의 땅, 지방은 어떻게 사라지나"}
             hashtag="#지방소멸"
             style={{ outline: "none" }}

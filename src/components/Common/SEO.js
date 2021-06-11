@@ -5,7 +5,7 @@ import Image from "../../assets/images/mainBg.webp";
 
 const SEO = (props) => {
   let location = useLocation();
-  let currentUrl = `https://somyeol.kbs.co.kr/${location.pathname}`;
+  let currentUrl = `https://news.kbs.co.kr/special/somyeol/${location.pathname}`
   let quote = props.quote !== undefined ? props.quote : "";
   let title =
     props.title !== undefined
