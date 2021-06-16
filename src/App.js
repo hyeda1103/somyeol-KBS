@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from "react";
-import { Switch, Route, HashRouter as Router } from "react-router-dom";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ReactGA from "react-ga";
@@ -22,13 +22,13 @@ function App() {
       mirror: false,
     });
 
-    ReactGA.initialize("UA-*********-*"); // Google Analytics 추적 ID
+    ReactGA.initialize('UA-193674226-1') // Google Analytics 추적 ID
     // 페이지 뷰 리포트
     ReactGA.pageview(window.location.pathname);
   }, []);
 
   return (
-    <Router>
+    <Router basename="/special/somyeol">
       <Suspense fallback={<LoadingPage />}>
         <GlobalStyle />
         <ScrollToTop />
@@ -36,14 +36,14 @@ function App() {
         <BGMplayer />
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route exact path="/prologue" component={Prologue} />
-          <Route exact path="/chp1" component={Chapter1} />
-          <Route exact path="/chp2" component={Chapter2} />
-          <Route exact path="/chp3" component={Chapter3} />
+          <Route path="/prologue" component={Prologue} />
+          <Route path="/chp1" component={Chapter1} />
+          <Route path="/chp2" component={Chapter2} />
+          <Route path="/chp3" component={Chapter3} />
         </Switch>
       </Suspense>
     </Router>
-  );
+  )
 }
 
 export default App;
