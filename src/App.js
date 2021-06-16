@@ -1,5 +1,5 @@
 import React, { useEffect, Suspense, lazy } from "react";
-import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
+import { Switch, Route, HashRouter as Router } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import ReactGA from "react-ga";
@@ -28,7 +28,7 @@ function App() {
   }, []);
 
   return (
-    <Router basename="/special/somyeol">
+    <Router>
       <Suspense fallback={<LoadingPage />}>
         <GlobalStyle />
         <ScrollToTop />
