@@ -30,8 +30,8 @@ const Cartogram = () => {
       .scale(4000)
       .translate([width / 2, height / 2]);
 
-    d3.json("/special/somyeol/data/korea_map3_optimized.geojson").then(function (polygon) {
-      d3.csv('/special/somyeol/data/new_offset.csv').then(function (shift1) {
+    d3.json("/data/korea_map3_optimized.geojson").then(function (polygon) {
+      d3.csv('/data/new_offset.csv').then(function (shift1) {
         let districts = polygon.features.length
 
         function modifypoly(polyline, shift, delta) {
