@@ -1,6 +1,8 @@
-# 소멸의 땅: 데이터 저널리즘에 기반한 인터렉티브 웹
+# 소멸의 땅
 
 > KBS 시사 다큐 '소멸의 땅'(2021년 4월 4일 KBS 시사기획 창 방영)의 [인터렉티브 웹](https://news.kbs.co.kr/special/somyeol/index.html)입니다.
+> Nominated for [The SIGMA AWARDS 2022 for data journalism](https://sigmaawards.org/land-of-the-extinct-how-does-the-local-city-collapse/)
+> 제 4회 데이터 저널리즘 어워드 [올해의 데이터 시각화상 수상](http://datajournalismawards.kr/)
 
 ## 목차
 
