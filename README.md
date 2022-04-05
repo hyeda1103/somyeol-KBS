@@ -1,8 +1,6 @@
 # 소멸의 땅
 
 > KBS 시사 다큐 '소멸의 땅'(2021년 4월 4일 KBS 시사기획 창 방영)의 [인터렉티브 웹](https://news.kbs.co.kr/special/somyeol/index.html)입니다.
-> Nominated for [The SIGMA AWARDS 2022 for data journalism](https://sigmaawards.org/land-of-the-extinct-how-does-the-local-city-collapse/)
-> 제 4회 데이터 저널리즘 어워드 [올해의 데이터 시각화상 수상](http://datajournalismawards.kr/)
 
 ## 목차
 
@@ -14,6 +12,7 @@
   - [시대별 인구변화를 면적으로 나타내는 카토그램](#시대별-인구변화를-면적으로-나타내는-카토그램)
   - [수도권으로의 청년인구이동을 나타내는 3D 지도](#수도권으로의-청년인구이동을-나타내는-3D-지도)
 - [기술](#기술)
+- [수상](#수상)
 - [참고](#참고)
 - [라이센스](#라이센스)
 - [English ver.](#interactive-web-documentary-with-data-visulization)
@@ -73,6 +72,11 @@ $ yarn start
 
 - 본 프로젝트는 [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html)를 사용하였습니다.
 - `package.json`에서 프로젝트 개발에 사용된 모든 dependency를 확인할 수 있습니다.
+
+## 수상
+- Nominated for [The SIGMA AWARDS 2022 for data journalism](https://sigmaawards.org/land-of-the-extinct-how-does-the-local-city-collapse/)
+- 제 4회 데이터 저널리즘 어워드 [올해의 데이터 시각화상 수상](http://datajournalismawards.kr/)
+
 
 ## 참고
 
@@ -163,6 +167,10 @@ Download all the data or clone this repository by clicking the green "Clone or d
 
 - This project is built with [CRA(Create-React-App)](https://reactjs.org/docs/create-a-new-react-app.html).
 - Used dependencies and versions can be found in `package.json` in the project root.
+
+## Awards and Achievements
+- Nominated for [The SIGMA AWARDS 2022 for data journalism](https://sigmaawards.org/land-of-the-extinct-how-does-the-local-city-collapse/)
+- 제 4회 데이터 저널리즘 어워드 [올해의 데이터 시각화상 수상](http://datajournalismawards.kr/)
 
 ## Reference
 
