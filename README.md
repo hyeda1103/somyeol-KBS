@@ -78,6 +78,7 @@ $ yarn start
 - `package.json`에서 프로젝트 개발에 사용된 모든 dependency를 확인할 수 있습니다.
 
 ## 수상
+- 유네스크와 아시아태평양방송연합, ABU가 공동 주최하는 T4P 미디어상, 변혁적 교육 분야 [디지털 부문 대상](https://news.kbs.co.kr/news/view.do?ncd=7673655)
 - Nominated for [The SIGMA AWARDS 2022 for data journalism](https://sigmaawards.org/land-of-the-extinct-how-does-the-local-city-collapse/)
 - 제 4회 데이터 저널리즘 어워드 [올해의 데이터 시각화상 수상](http://datajournalismawards.kr/)
 
